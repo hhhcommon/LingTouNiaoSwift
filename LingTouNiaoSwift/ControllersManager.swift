@@ -11,7 +11,6 @@ import UIKit
 class ControllersManager: NSObject {
     static let sharedManager = ControllersManager()
     private override init() {}
-    
     func setupProjectRootViewController() {
         GlobalManager.mainWindow().rootViewController = ProgectRootController()
     }

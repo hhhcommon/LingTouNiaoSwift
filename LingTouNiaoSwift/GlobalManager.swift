@@ -6,15 +6,25 @@
 //  Copyright © 2016年 LiuJie. All rights reserved.
 //
 
-import UIKit
+import IQKeyboardManagerSwift
 
 class GlobalManager: NSObject {
     static let sharedManager = GlobalManager()
     private override init() {}
     
     class func globleSetting() {
+        // 键盘
+        self.initIQKeyboardManager()
         // 显示
         self.initializeGlobleApprence()
+    }
+    
+    class fileprivate func initIQKeyboardManager() {
+        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
+        IQKeyboardManager.sharedManager().shouldShowTextFieldPlaceholder = false
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 40
+        IQKeyboardManager.sharedManager().enable = true
     }
     
     class fileprivate func initializeGlobleApprence() {

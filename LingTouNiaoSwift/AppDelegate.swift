@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
+//        [[StartPageManager sharedStartPageManager] showStartPage];
+        
         return true
     }
 

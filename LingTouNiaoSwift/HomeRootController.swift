@@ -24,7 +24,6 @@ class HomeRootController: BaseViewController {
         print("login")
         let loginNav = BaseNavigationController(rootViewController: LoginController())
         self.present(loginNav, animated: true) {
-            
         }
     }
 }
