@@ -15,3 +15,4 @@ class ControllersManager: NSObject {
         GlobalManager.mainWindow().rootViewController = ProgectRootController()
     }
 }
+

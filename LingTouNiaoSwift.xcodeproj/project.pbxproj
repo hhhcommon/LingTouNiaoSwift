@@ -36,6 +36,11 @@
 		E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C681E2334EB00FBB249 /* CaptchaView.swift */; };
 		E1836C6B1E23757C00FBB249 /* UIButton+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */; };
 		E1836C6D1E23844400FBB249 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C6C1E23844400FBB249 /* CustomButton.swift */; };
+		E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */; };
+		E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7551E2DFC1000EE405A /* Contrstants.swift */; };
+		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
+		E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75C1E2E100400EE405A /* String+Common.swift */; };
+		E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,11 +94,16 @@
 		E11BFBC71E1B743B00732980 /* DiscoverRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverRootController.swift; sourceTree = "<group>"; };
 		E11BFBC91E1B745500732980 /* InvestmentRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentRootController.swift; sourceTree = "<group>"; };
 		E147B02E1E1CC7B100CCB8BB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		E147B2371E1E3A8B00CCB8BB /* LingTouNiaoSwift-Bridging-Heade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Heade.h"; sourceTree = "<group>"; };
 		E1836C661E2334D900FBB249 /* PasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		E1836C681E2334EB00FBB249 /* CaptchaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaView.swift; sourceTree = "<group>"; };
 		E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Common.swift"; sourceTree = "<group>"; };
 		E1836C6C1E23844400FBB249 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
+		E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		E1C6A7551E2DFC1000EE405A /* Contrstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contrstants.swift; sourceTree = "<group>"; };
+		E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrlConstants.swift; sourceTree = "<group>"; };
+		E1C6A75C1E2E100400EE405A /* String+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Common.swift"; sourceTree = "<group>"; };
+		E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Common.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,9 +178,9 @@
 				E101F2121E14B8780049A513 /* Common */,
 				E101F2061E1214E30049A513 /* Extension */,
 				E101F1D01E111ABC0049A513 /* AppDelegate.swift */,
-				E147B2371E1E3A8B00CCB8BB /* LingTouNiaoSwift-Bridging-Heade.h */,
 				E101F1D71E111ABC0049A513 /* Assets.xcassets */,
 				E101F1DC1E111ABC0049A513 /* Info.plist */,
+				E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */,
 			);
 			path = LingTouNiaoSwift;
 			sourceTree = "<group>";
@@ -196,6 +206,7 @@
 		E101F2021E120F7A0049A513 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6A7551E2DFC1000EE405A /* Contrstants.swift */,
 				E101F2041E120FEE0049A513 /* GlobalAppearance.swift */,
 				E101F20E1E138C6D0049A513 /* GlobalSize.swift */,
 			);
@@ -205,6 +216,7 @@
 		E101F2061E1214E30049A513 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6A73C1E2C9E7E00EE405A /* Tool */,
 				E11BFBA81E1661AB00732980 /* Mananger */,
 				E11BFBA31E16016D00732980 /* Utility */,
 				E101F2071E1214EC0049A513 /* Category */,
@@ -221,6 +233,8 @@
 				E101F2101E14B1710049A513 /* UIBarButtonItem+ClearBackground.swift */,
 				E11BFBA61E162DAE00732980 /* UIView+Frame.swift */,
 				E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */,
+				E1C6A75C1E2E100400EE405A /* String+Common.swift */,
+				E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -268,8 +282,7 @@
 		E101F21A1E14BE5C0049A513 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E1836C681E2334EB00FBB249 /* CaptchaView.swift */,
-				E1836C661E2334D900FBB249 /* PasswordView.swift */,
+				E1C6A73F1E2C9EC200EE405A /* Base */,
 				E11BFBAE1E1B499600732980 /* Register */,
 				E101F21B1E14BE810049A513 /* Login */,
 			);
@@ -339,7 +352,6 @@
 			children = (
 				E11BFBB21E1B591000732980 /* View */,
 				E11BFBB11E1B58FF00732980 /* Controller */,
-				E11BFBAF1E1B49B800732980 /* RegisterController.swift */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -347,6 +359,7 @@
 		E11BFBB11E1B58FF00732980 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E11BFBAF1E1B49B800732980 /* RegisterController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -492,6 +505,40 @@
 				E11BFBC71E1B743B00732980 /* DiscoverRootController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		E1C6A73C1E2C9E7E00EE405A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6A7571E2E0B7500EE405A /* Network */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		E1C6A73F1E2C9EC200EE405A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6A7401E2C9ECE00EE405A /* View */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E1C6A7401E2C9ECE00EE405A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1836C681E2334EB00FBB249 /* CaptchaView.swift */,
+				E1836C661E2334D900FBB249 /* PasswordView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E1C6A7571E2E0B7500EE405A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */,
+				E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -682,6 +729,7 @@
 			files = (
 				E1836C671E2334D900FBB249 /* PasswordView.swift in Sources */,
 				E101F2111E14B1710049A513 /* UIBarButtonItem+ClearBackground.swift in Sources */,
+				E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */,
 				E11BFBAD1E1668DB00732980 /* GlobalManager.swift in Sources */,
 				E11BFBCA1E1B745500732980 /* InvestmentRootController.swift in Sources */,
 				E1836C6D1E23844400FBB249 /* CustomButton.swift in Sources */,
@@ -690,16 +738,20 @@
 				E11BFBA71E162DAE00732980 /* UIView+Frame.swift in Sources */,
 				E101F1D11E111ABC0049A513 /* AppDelegate.swift in Sources */,
 				E101F1FF1E120EEA0049A513 /* BaseViewController.swift in Sources */,
+				E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */,
 				E101F2191E14B96D0049A513 /* HomeRootController.swift in Sources */,
 				E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */,
+				E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */,
 				E11BFBC81E1B743B00732980 /* DiscoverRootController.swift in Sources */,
 				E101F20F1E138C6D0049A513 /* GlobalSize.swift in Sources */,
 				E101F2051E120FEE0049A513 /* GlobalAppearance.swift in Sources */,
 				E101F20B1E12163C0049A513 /* UIColor+HexColor.swift in Sources */,
 				E11BFBB51E1B71FE00732980 /* ProgectRootController.swift in Sources */,
 				E101F2011E120F310049A513 /* BaseNavigationController.swift in Sources */,
+				E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */,
 				E147B02F1E1CC7B100CCB8BB /* LoginView.swift in Sources */,
 				E11BFBB01E1B49B800732980 /* RegisterController.swift in Sources */,
+				E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */,
 				E11BFBAA1E1661BF00732980 /* ControllersManager.swift in Sources */,
 				E11BFBC41E1B73DB00732980 /* AccountRootController.swift in Sources */,
 				E11BFBA51E16018B00732980 /* CustomerizedFont.swift in Sources */,
@@ -842,7 +894,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devLiuJie.LingTouNiaoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LingTouNiaoSwift/LingTouNiaoSwift-Bridging-Heade.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -858,7 +910,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devLiuJie.LingTouNiaoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LingTouNiaoSwift/LingTouNiaoSwift-Bridging-Heade.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
