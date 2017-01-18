@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 let PathResponseCache = "ResponseCache"
 
@@ -61,12 +62,10 @@ extension NSObject {
     }
     
     //#pragma mark - Net Error Handle
-//    func handleResponse(response: Any) -> <#return type#> {
-//        <#function body#>
-//    }
-//    -(id)handleResponse:(id)response{
-//    return [self handleResponse:response autoShowError:YES];
-//    }
+    func handleResponse(response: NSDictionary) -> Error? {
+        return self.handleResponse(response: response, autoShowError: true)
+    }
+
     func handleResponse(response: NSDictionary, autoShowError: Bool) -> Error? {
         var error:  Error?
         //code为2值时，表示有错,1表示无错
@@ -75,7 +74,7 @@ extension NSObject {
         if errorCode != 1 {
             error = NSError.init(domain: API_BASE_URL, code: errorCode, userInfo: response as? [AnyHashable : Any])
             if autoShowError {
-//                [NSObject showError:error];
+                _ = NSObject.showError(error: error as! NSError)
             }
         }
         return error
@@ -84,15 +83,14 @@ extension NSObject {
     //#pragma mark - tips
     static func showWaitingIconInView(_ view: UIView) {
         self.dismissWaitingIconInView(view)
-//        
-//        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-//        hud.mode = MBProgressHUDModeIndeterminate;
-//        hud.bezelView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
-//        hud.removeFromSuperViewOnHide = YES;
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = MBProgressHUDMode.indeterminate
+        hud.bezelView.backgroundColor = UIColor.colorWithRGBA(0, 0, 0, a: 0.2)
+        hud.removeFromSuperViewOnHide = true
     }
     
     static func dismissWaitingIconInView(_ view: UIView) {
-//        [MBProgressHUD hideHUDForView:view animated:YES];
+        MBProgressHUD.hide(for: view, animated: true)
     }
 
     static func tipFromError(error: NSError?) -> String? {
@@ -125,15 +123,15 @@ extension NSObject {
     
     static func showHudTipStr(_ tipStr: String?) {
         if tipStr != nil && (tipStr?.characters.count)! > 0 {
-//            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[GlobalManager keyWindow]  animated:YES];
-//            hud.mode = MBProgressHUDModeText;
-//            hud.bezelView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
-//            hud.detailsLabel.font = [UIFont boldSystemFontOfSize:15.0];
-//            hud.detailsLabel.textColor = [UIColor whiteColor];
-//            hud.detailsLabel.text = tipStr;
-//            hud.margin = 10.f;
-//            hud.removeFromSuperViewOnHide = YES;
-//            [hud hideAnimated:YES afterDelay:2.0];
+            let hud = MBProgressHUD.showAdded(to: GlobalManager.keyWindow(), animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.bezelView.backgroundColor = UIColor.colorWithRGBA(0, 0, 0, a: 0.8)
+            hud.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
+            hud.detailsLabel.textColor = UIColor.white
+            hud.detailsLabel.text = tipStr
+            hud.margin = 10
+            hud.removeFromSuperViewOnHide = true
+            hud.hide(animated: true, afterDelay: 2)
         }
     }
     

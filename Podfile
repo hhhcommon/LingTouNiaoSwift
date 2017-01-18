@@ -9,4 +9,5 @@ pod 'IQKeyboardManagerSwift', '~> 4.0.8'
 pod 'SnapKit', '~> 3.1.2'
 pod 'MJRefresh'
 pod 'SVProgressHUD'
+pod 'MBProgressHUD', '~> 1.0.0'
 end
