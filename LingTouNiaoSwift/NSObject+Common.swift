@@ -12,7 +12,7 @@ import MBProgressHUD
 let PathResponseCache = "ResponseCache"
 
 extension NSObject {
-    // File Manager
+    // MARK: - File Manager
     // 获取fileName在缓存文件夹中的完整地址
     static func pathInCacheDirectory(fileName: String) -> String {
         let cachePaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
@@ -22,23 +22,26 @@ extension NSObject {
     
     // 创建缓存文件夹
     static func createDirInCache(dirName: String) -> Bool {
-//        let dirPath = self.pathInCacheDirectory(fileName: dirName)
-//        var isDir = false
-//        let fileManager = FileManager.default
-//        let existed = fileManager.fileExists(atPath: dirPath, isDirectory: isDir)
-//        let isCreated = false
-//        if !(isDir && existed) {
-//            isCreated = fileManager.createDirectory(at: URL., withIntermediateDirectories: true, attributes: <#T##[String : Any]?#>)
-//            isCreated = [fileManager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:nil];
-//        }
-//        if (existed) {
-//            isCreated = YES;
-//        }
-//        return isCreated;
-        return true
+        let dirPath = self.pathInCacheDirectory(fileName: dirName)
+        var isDir: ObjCBool = ObjCBool(false)
+        let fileManager = FileManager.default
+        let existed = fileManager.fileExists(atPath: dirPath, isDirectory: &isDir)
+        var isCreated = false
+        if !(isDir.boolValue && existed) {
+            do {
+                try fileManager.createDirectory(atPath: dirPath, withIntermediateDirectories: true, attributes: nil)
+                isCreated = true
+            } catch {
+                isCreated = false
+            }
+        }
+        if existed {
+            isCreated = true
+        }
+        return isCreated
     }
 
-    //#pragma mark - Net Data Persistence
+    // MARK: - Net Data Persistence
     // 保存网络请求数据
     static func saveResponseData(data: NSDictionary, requestPath: String) -> Bool {
         if requestPath.isEmpty {
@@ -61,7 +64,7 @@ extension NSObject {
         return NSDictionary.init(contentsOf: URL(fileURLWithPath: abslutePath))
     }
     
-    //#pragma mark - Net Error Handle
+    // MARK: - Net Error Handle
     func handleResponse(response: NSDictionary) -> Error? {
         return self.handleResponse(response: response, autoShowError: true)
     }
@@ -80,7 +83,7 @@ extension NSObject {
         return error
     }
     
-    //#pragma mark - tips
+    // MARK: - tips
     static func showWaitingIconInView(_ view: UIView) {
         self.dismissWaitingIconInView(view)
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
@@ -135,7 +138,7 @@ extension NSObject {
         }
     }
     
-    //#pragma mark - runtime
+    // MARK: - runtime
     /**
      *  获取对象的所有方法
      */
