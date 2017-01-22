@@ -41,6 +41,7 @@
 		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
 		E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75C1E2E100400EE405A /* String+Common.swift */; };
 		E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */; };
+		E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A76E1E34919100EE405A /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrlConstants.swift; sourceTree = "<group>"; };
 		E1C6A75C1E2E100400EE405A /* String+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Common.swift"; sourceTree = "<group>"; };
 		E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Common.swift"; sourceTree = "<group>"; };
+		E1C6A76E1E34919100EE405A /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 		E11BFBB21E1B591000732980 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6A76E1E34919100EE405A /* RegisterView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 			files = (
 				E1836C671E2334D900FBB249 /* PasswordView.swift in Sources */,
 				E101F2111E14B1710049A513 /* UIBarButtonItem+ClearBackground.swift in Sources */,
+				E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */,
 				E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */,
 				E11BFBAD1E1668DB00732980 /* GlobalManager.swift in Sources */,
 				E11BFBCA1E1B745500732980 /* InvestmentRootController.swift in Sources */,

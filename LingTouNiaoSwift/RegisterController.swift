@@ -13,5 +13,10 @@ class RegisterController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "注册"
+        let registerView = RegisterView()
+        view.addSubview(registerView)
+        registerView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
 }

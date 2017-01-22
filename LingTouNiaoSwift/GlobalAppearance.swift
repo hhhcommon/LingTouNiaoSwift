@@ -35,7 +35,7 @@ func boldFont(_ fontSize: CGFloat) -> UIFont {
 // 常用颜色
 let ColorF9F9F9 = UIColor.colorWithHex(hex: 0xF9F9F9)   // 用于页面底部颜色&互助众筹加入按钮等
 let ColorEFEFEF = UIColor.colorWithHex(hex: 0xEFEFEF)   // 用于页面模块间的分隔线&单独线条隔断等
-let ColorFFFDE4 = UIColor.colorWithHex(hex: 0xFFFDE4)   // 用于地步投资按钮上方提示语背景
+let ColorFFFDE4 = UIColor.colorWithHex(hex: 0xFFFDE4)   // 用于底部投资按钮上方提示语背景
 let ColorECECEC = UIColor.colorWithHex(hex: 0xECECEC)   // 用于每个标的底色，标的进度条灰色
 let ColorFAB51C = UIColor.colorWithHex(hex: 0xFAB51C)   // 用于标的进度颜色
 let Color83C940 = UIColor.colorWithHex(hex: 0x83C940)   // 用于注册成功辅助色

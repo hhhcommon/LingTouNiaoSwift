@@ -41,7 +41,15 @@ class CaptchaView: UIView {
         
         let captchaButton = UIButton()
         
-        captchaButton.setImage(UIImage.init(named: "placeholder_refresh"), for: UIControlState.normal)
+        if loginType == .login {
+            captchaButton.setImage(UIImage.init(named: "placeholder_refresh"), for: UIControlState.normal)
+        } else if loginType == .register {
+            captchaButton.titleLabel?.font = normalFont(15)
+            captchaButton.setTitle("获取验证码", for: UIControlState.normal)
+            captchaButton.setTitleColor(LinkColor, for: UIControlState.normal)
+            captchaButton.setTitleColor(DisabledColor, for: UIControlState.disabled)
+        }
+        
         captchaButton.addTarget(self, action: #selector(getCaptcha(button:)), for: UIControlEvents.touchUpInside)
         self.addSubview(captchaButton)
         
