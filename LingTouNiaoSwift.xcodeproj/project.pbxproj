@@ -42,6 +42,7 @@
 		E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75C1E2E100400EE405A /* String+Common.swift */; };
 		E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */; };
 		E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A76E1E34919100EE405A /* RegisterView.swift */; };
+		E1C6A7711E349D1100EE405A /* String+Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7701E349D1100EE405A /* String+Check.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		E1C6A75C1E2E100400EE405A /* String+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Common.swift"; sourceTree = "<group>"; };
 		E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Common.swift"; sourceTree = "<group>"; };
 		E1C6A76E1E34919100EE405A /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E1C6A7701E349D1100EE405A /* String+Check.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Check.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */,
 				E1C6A75C1E2E100400EE405A /* String+Common.swift */,
 				E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */,
+				E1C6A7701E349D1100EE405A /* String+Check.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				E101F1D11E111ABC0049A513 /* AppDelegate.swift in Sources */,
 				E101F1FF1E120EEA0049A513 /* BaseViewController.swift in Sources */,
 				E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */,
+				E1C6A7711E349D1100EE405A /* String+Check.swift in Sources */,
 				E101F2191E14B96D0049A513 /* HomeRootController.swift in Sources */,
 				E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */,
 				E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */,
