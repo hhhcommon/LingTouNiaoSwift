@@ -19,7 +19,6 @@ extension UIButton {
             return obj!
         }
         set {
-            
             self.addTarget(self, action: #selector(tapButton(button:)), for: UIControlEvents.touchUpInside)
             let key: UnsafeRawPointer! = UnsafeRawPointer.init(bitPattern: "tappedBlock".hashValue)
             objc_setAssociatedObject(self, key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)

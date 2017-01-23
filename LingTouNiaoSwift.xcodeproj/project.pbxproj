@@ -43,6 +43,7 @@
 		E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */; };
 		E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A76E1E34919100EE405A /* RegisterView.swift */; };
 		E1C6A7711E349D1100EE405A /* String+Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7701E349D1100EE405A /* String+Check.swift */; };
+		E1C6A7761E35E63900EE405A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7751E35E63900EE405A /* LoginModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Common.swift"; sourceTree = "<group>"; };
 		E1C6A76E1E34919100EE405A /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		E1C6A7701E349D1100EE405A /* String+Check.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Check.swift"; sourceTree = "<group>"; };
+		E1C6A7751E35E63900EE405A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 		E101F21B1E14BE810049A513 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6A7741E35E62800EE405A /* Model */,
 				E101F2201E14BF050049A513 /* View */,
 				E101F21E1E14BECC0049A513 /* Controller */,
 			);
@@ -547,6 +550,14 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		E1C6A7741E35E62800EE405A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6A7751E35E63900EE405A /* LoginModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -757,6 +768,7 @@
 				E11BFBB51E1B71FE00732980 /* ProgectRootController.swift in Sources */,
 				E101F2011E120F310049A513 /* BaseNavigationController.swift in Sources */,
 				E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */,
+				E1C6A7761E35E63900EE405A /* LoginModel.swift in Sources */,
 				E147B02F1E1CC7B100CCB8BB /* LoginView.swift in Sources */,
 				E11BFBB01E1B49B800732980 /* RegisterController.swift in Sources */,
 				E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */,

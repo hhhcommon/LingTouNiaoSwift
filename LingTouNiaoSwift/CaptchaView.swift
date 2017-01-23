@@ -15,6 +15,8 @@ enum LoginType {
 
 class CaptchaView: UIView {
 
+    let captchaButton = UIButton()
+    var getCaptchaBlock: ((UIButton) -> ())?
     var loginType = LoginType.login
     
     lazy var captchaTextField: CustomTextField = {
@@ -38,8 +40,6 @@ class CaptchaView: UIView {
     func addAllSubviews() {
         
         self.addSubview(captchaTextField)
-        
-        let captchaButton = UIButton()
         
         if loginType == .login {
             captchaButton.setImage(UIImage.init(named: "placeholder_refresh"), for: UIControlState.normal)
@@ -85,9 +85,9 @@ class CaptchaView: UIView {
     }
     
     func getCaptcha(button: UIButton) {
-//        captchaTextField.isSecureTextEntry = button.isSelected
-//        button.isSelected = !button.isSelected
-        print("获取验证码")
+        if self.getCaptchaBlock != nil {
+            self.getCaptchaBlock!(button)
+        }
     }
 
 }

@@ -11,6 +11,10 @@ import SnapKit
 
 class LoginView: UIView {
     
+    var captchaButton: UIButton?
+    var loginSubmitBlock: ((UIButton) -> ())?
+    var getCaptchaBlock: ((UIButton) -> ())?
+
     lazy var telephoneTextField: CustomTextField = {
         var textField = CustomTextField.init(leftIconName: "icon_username", placeholder: "请输入手机号")
         textField.drawBottomLine = true
@@ -54,8 +58,14 @@ class LoginView: UIView {
         self.addSubview(passwordView)
         self.addSubview(captchaView)
         self.addSubview(loginButton)
-        self.passwordTextField = passwordView.passwordTextField
-        self.captchaTextField = captchaView.captchaTextField
+        passwordTextField = passwordView.passwordTextField
+        captchaTextField = captchaView.captchaTextField
+        captchaButton = captchaView.captchaButton
+        captchaView.getCaptchaBlock = { (button) in
+            if self.getCaptchaBlock != nil {
+                self.getCaptchaBlock!(button)
+            }
+        }
         
         telephoneTextField.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(adaptiveBaseIphone6(30))
@@ -87,8 +97,10 @@ class LoginView: UIView {
         }
     }
     
-    func loginSubmit() {
-        print("被点击了")
+    fileprivate func loginSubmit() {
+        if loginSubmitBlock != nil {
+            loginSubmitBlock!(loginButton)
+        }
     }
     
     deinit {
