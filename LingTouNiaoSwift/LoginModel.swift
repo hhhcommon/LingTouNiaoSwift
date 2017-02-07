@@ -14,7 +14,7 @@ class LoginModel: NSObject {
     
     class func getPictureCode(block: ((UIImage?) -> ())?) {
         let machineNo = UIDevice.current.identifierForVendor?.uuidString
-        let path = API_BASE_URL + "/" + GetPictureCaptchaUrl + machineNo!
+        let path = API_BASE_URL + GetPictureCaptchaUrl + "/" + machineNo!
         let request = URLRequest.init(url: URL(string: path)!)
         NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { (response, data, connectionError) in
             var image: UIImage?
