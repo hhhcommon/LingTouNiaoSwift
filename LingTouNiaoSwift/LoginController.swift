@@ -19,6 +19,7 @@ class LoginController: BaseViewController {
         baseNavigationController?.hideBorder(isHidden: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarItem(title: "注册", target: self, action: #selector(self.registerSubmit), color: UIColor.colorWithHex(hex: 0x3a3a3a))
         view.addSubview(loginView)
+        self.getCaptchaSubmit(loginView.captchaButton!)
         loginView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
@@ -66,5 +67,18 @@ class LoginController: BaseViewController {
         }
         
         print("输入内容正确")
+        
+        let machineNo = UIDevice.current.identifierForVendor?.uuidString
+        let dictionary = ["mobileNo" :loginView.telephoneTextField.text,
+            "password" : loginView.passwordTextField?.text,
+            "machineNo" : machineNo,
+            "pictureCode" : loginView.captchaTextField?.text]
+        button.isEnabled = false
+        LoginModel.userLogin(params: dictionary) { (response, error) in
+            button.isEnabled = true
+            if error == nil {
+                print("登录成功")
+            }
+        }
     }
 }

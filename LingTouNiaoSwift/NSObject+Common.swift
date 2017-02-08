@@ -71,11 +71,10 @@ extension NSObject {
 
     func handleResponse(response: NSDictionary, autoShowError: Bool) -> Error? {
         var error:  Error?
-        //code为2值时，表示有错,1表示无错
-        let codeNumber = response["code"] as! NSNumber
-        let errorCode = codeNumber.intValue
-        if errorCode != 1 {
-            error = NSError.init(domain: API_BASE_URL, code: errorCode, userInfo: response as? [AnyHashable : Any])
+        let codeNumber = response["resultCode"] as! NSString
+        let resultCode = codeNumber.intValue
+        if resultCode != 0 {
+            error = NSError.init(domain: API_BASE_URL, code: Int(resultCode), userInfo: response as? [AnyHashable : Any])
             if autoShowError {
                 _ = NSObject.showError(error: error as! NSError)
             }
@@ -99,8 +98,8 @@ extension NSObject {
     static func tipFromError(error: NSError?) -> String? {
         if error != nil && error?.userInfo != nil {
             let tipStr: String
-            if (error?.userInfo["reason"]) != nil {
-                tipStr = error?.userInfo["reason"] as! String
+            if (error?.userInfo["resultMessage"]) != nil {
+                tipStr = error?.userInfo["resultMessage"] as! String
             } else {
                 if (error?.userInfo["NSLocalizedDescription"]) != nil {
                     tipStr = error?.userInfo["NSLocalizedDescription"] as! String

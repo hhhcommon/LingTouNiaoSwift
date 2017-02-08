@@ -15,6 +15,9 @@ enum LoginType {
 
 class CaptchaView: UIView {
 
+    var timeCount = 60
+    var timer: Timer?
+    
     let captchaButton = UIButton()
     var getCaptchaBlock: ((UIButton) -> ())?
     var loginType = LoginType.login
@@ -89,5 +92,32 @@ class CaptchaView: UIView {
             self.getCaptchaBlock!(button)
         }
     }
-
+    
+    func startTimer() {
+        self.captchaButton.isEnabled = false
+        if timer == nil && loginType == .register {
+            timer = Timer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+            RunLoop.main.add(timer!, forMode:RunLoopMode.commonModes)
+        }
+        timer!.fire()
+    }
+    
+    @objc fileprivate func updateTimer() {
+        timeCount -= 1
+        let timeString = "\(timeCount)秒后重试"
+        captchaButton.setTitle(timeString, for: UIControlState.disabled)
+        if timeCount == 0 {
+            self.stopTimer()
+        }
+    }
+    
+    func stopTimer() {
+        self.captchaButton.isEnabled = true
+        if timer != nil {
+            timer!.invalidate()
+            timer = nil
+        }
+        captchaButton.setTitle("重新获取", for: UIControlState.normal)
+        timeCount = 60
+    }
 }

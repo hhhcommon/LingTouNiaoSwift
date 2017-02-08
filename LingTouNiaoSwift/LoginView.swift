@@ -89,7 +89,7 @@ class LoginView: UIView {
     }
     
     // notification methods
-    func textFieldTextDidChange(textField: UITextField) {
+    @objc fileprivate func textFieldTextDidChange(textField: UITextField) {
         if (telephoneTextField.text?.characters.count)! > 0 && (passwordTextField?.text?.characters.count)! > 0 && (captchaTextField?.text?.characters.count)! > 0{
             loginButton.isEnabled = true
         } else {

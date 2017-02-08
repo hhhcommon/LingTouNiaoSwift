@@ -9,7 +9,16 @@
 import UIKit
 
 class RegisterView: UIView {
-
+    
+    var captchaButton: UIButton?
+    var registerSubmitBlock: ((UIButton) -> ())?
+    var getCaptchaBlock: ((UIButton) -> ())? {
+        willSet {
+            captchaView.getCaptchaBlock = newValue
+            print("\(newValue)")
+        }
+    }
+    
     lazy var telephoneTextField: CustomTextField = {
         var textField = CustomTextField.init(leftIconName: "icon_mobileno", placeholder: "推荐使用银行预留手机号")
         textField.drawBottomLine = true
@@ -53,6 +62,7 @@ class RegisterView: UIView {
         self.addSubview(registerButton)
         self.passwordTextField = passwordView.passwordTextField
         self.captchaTextField = captchaView.captchaTextField
+        captchaButton = captchaView.captchaButton
         
         telephoneTextField.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(adaptiveBaseIphone6(30))
@@ -76,10 +86,29 @@ class RegisterView: UIView {
     }
     
     func registerNotifications() {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.textFieldTextDidChange(textField:)), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
     }
     
-    func registerSubmit() {
-        print("注册")
+    // notification methods
+    @objc fileprivate func textFieldTextDidChange(textField: UITextField) {
+        if (telephoneTextField.text?.characters.count)! > 0 && (passwordTextField?.text?.characters.count)! > 0 && (captchaTextField?.text?.characters.count)! > 0 {
+            registerButton.isEnabled = true
+        } else {
+            registerButton.isEnabled = false
+        }
+    }
+    
+    fileprivate func registerSubmit() {
+        if registerSubmitBlock != nil {
+            registerSubmitBlock!(registerButton)
+        }
+    }
+    
+    func startTimer() {
+        captchaView.startTimer()
+    }
+    
+    func stopTimer() {
+        captchaView.stopTimer()
     }
 }

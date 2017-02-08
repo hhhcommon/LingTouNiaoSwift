@@ -26,4 +26,8 @@ class LoginModel: NSObject {
             }
         }
     }
+    
+    class func userLogin(params: Dictionary<String, Any>, block: @escaping responseBlock) {
+        NetAPIManager.sharedManager.request(path: UserLoginUrl, params: params, methodType: NetworkMethod.Post, block: block)
+    }
 }

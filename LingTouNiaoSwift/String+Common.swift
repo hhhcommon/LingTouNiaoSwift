@@ -31,8 +31,9 @@ extension String {
             return ""
         }
         var inputString = ""
+        
         for key in sortedValues {
-            inputString = inputString + "\(key)=\(dict[key])"
+            inputString = inputString + "\(key)=\(dict[key] as! NSObject)"
         }
         return inputString
     }

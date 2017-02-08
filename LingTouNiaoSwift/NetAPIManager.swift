@@ -9,16 +9,21 @@
 import UIKit
 import AFNetworking
 
+typealias responseBlock = ((_ response: Any?, _ error: Error?) -> Void)
+
 enum NetworkMethod {
     case Get
     case Post
 }
 
-func pathKey(path: String, parameters: NSDictionary?) -> String {
-    if parameters != nil {
-        return path.appending(AFQueryStringFromParameters(parameters as! [AnyHashable : Any]))
+func pathKey(path: String?, parameters: NSDictionary?) -> String {
+    if path == nil {
+        return ""
     }
-    return path
+    if parameters != nil {
+        return path!.appending(AFQueryStringFromParameters(parameters as! [AnyHashable : Any]))
+    }
+    return path!
 }
 
 class NetAPIManager: AFHTTPSessionManager {
@@ -26,24 +31,31 @@ class NetAPIManager: AFHTTPSessionManager {
     static let sharedManager = NetAPIManager();
     let private_key = "ltn$%^qpdhTH18"
     
-    func request(path: String, params: Dictionary<String, Any>?, methodType: NetworkMethod, block: @escaping (_ response: Any?, _ error: Error?) -> Void) -> Void {
+    func request(path: String, params: Dictionary<String, Any>?, methodType: NetworkMethod, block: @escaping responseBlock) -> Void {
         self.request(path: path, params: params, methodType: methodType, autoShowError: true, block: block)
     }
     
-    func request(path: String, params: Dictionary<String, Any>?, methodType: NetworkMethod, autoShowError: Bool, block: @escaping (_ response: Any?, _ error: Error?) -> Void) -> Void {
-        
-        // log请求数据
-        print("\n===========request===========\n\(methodType)\n\(path):\n\(params)")
+    func request(path: String, params: Dictionary<String, Any>?, methodType: NetworkMethod, autoShowError: Bool, block: @escaping responseBlock) -> Void {
         
         // 封装基础参数
         let params = self.configParameters(parameters: params)
+        
+        // 头部签名
+        var signParams = params
+        signParams.updateValue(private_key, forKey: "private_key")
+        var signString = String.serialize(dict: signParams)
+        signString = signString.md5()
+        self.requestSerializer.setValue(signString, forHTTPHeaderField: "header_sign")
+        
+        // log请求数据
+        print("\n===========request===========\n\(methodType)\n\(path):\n\(params)")
         
         // 发起请求
         switch (methodType) {
         case .Get:
             //所有 Get 请求，根据需要增加缓存机制
             var localPath: String?
-            let cachePaths = getCachePaths();
+            let cachePaths = getCachePaths()
             if cachePaths.contains(path) {
                 if params.count > 0 {
                     localPath?.append(params.description)
@@ -53,12 +65,12 @@ class NetAPIManager: AFHTTPSessionManager {
                 print("\n===========response===========\n\(path.netAbsolutePath()):\n\(responseObject)")
                 let error = self.handleResponse(response: responseObject as! NSDictionary, autoShowError: autoShowError)
                 if error != nil {
-                    let responseObject = NSObject.loadResponse(requestPath: pathKey(path: localPath!, parameters: params as NSDictionary?))
+                    let responseObject = NSObject.loadResponse(requestPath: pathKey(path: localPath, parameters: params as NSDictionary?))
                     block(responseObject, error);
                 } else {
                     // 如果需要缓存，则缓存
                     if responseObject is NSDictionary {
-                        _ = NSObject.saveResponseData(data: responseObject as! NSDictionary, requestPath: pathKey(path: localPath!, parameters: params as NSDictionary?))
+                        _ = NSObject.saveResponseData(data: responseObject as! NSDictionary, requestPath: pathKey(path: localPath, parameters: params as NSDictionary?))
                     }
                     block(responseObject, nil);
                 }
@@ -93,16 +105,11 @@ class NetAPIManager: AFHTTPSessionManager {
         
         // 基础参数
         params.updateValue(GlobalManager.appVersion(), forKey: "appVersion")
+        params.updateValue(UIDevice.current.systemVersion, forKey: "osVersion")
         params.updateValue("I", forKey: "clientType")
         params.updateValue(UserDefaults.standard.value(forKey: SessionKey) ?? "", forKey: SessionKey)
-        
-        // 加密参数
-        //        let signParams = NSMutableDictionary(dictionary: params)
-        //        signParams.setValue(private_key, forKey: "private_key")
-        //        let signString = [NSString serialize:signParameters];
-        //        signString = [NSString md5:signString];
-        
-        //        [parameters setValue:signString forKey:@"sign"];
+//        params.updateValue(NSNumber.init(value: 1), forKey: "app_client_id")
+//        params.updateValue("AppStore", forKey: "channel")
         
         return params
     }
