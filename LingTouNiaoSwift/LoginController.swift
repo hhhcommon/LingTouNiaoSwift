@@ -78,6 +78,7 @@ class LoginController: BaseViewController {
             button.isEnabled = true
             if error == nil {
                 print("登录成功")
+                self.back()
             }
         }
     }
