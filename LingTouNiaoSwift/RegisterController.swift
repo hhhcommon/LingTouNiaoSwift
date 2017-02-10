@@ -67,5 +67,15 @@ class RegisterController: BaseViewController {
         }
         print("输入内容正确")
         
+//        "partnerMobile" : referee,
+//        "readAndAgree" : @(agree)
+        let dictionary = [
+            "mobileNo" : registerView.telephoneTextField.text!,
+            "password" : registerView.passwordTextField?.text,
+            "mobileCode" : registerView.captchaTextField?.text
+            ]
+        RegisterModel.userRegister(params: dictionary) { (response, error) in
+            
+        }
     }
 }

@@ -22,6 +22,7 @@
 		E101F2191E14B96D0049A513 /* HomeRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101F2181E14B96D0049A513 /* HomeRootController.swift */; };
 		E101F21D1E14BEC60049A513 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101F21C1E14BEC60049A513 /* LoginController.swift */; };
 		E101F2221E14C2740049A513 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101F2211E14C2740049A513 /* CustomTextField.swift */; };
+		E105F4851E4C2165006D3D0D /* AgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105F4841E4C2165006D3D0D /* AgreeView.swift */; };
 		E11BFBA51E16018B00732980 /* CustomerizedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BFBA41E16018B00732980 /* CustomerizedFont.swift */; };
 		E11BFBA71E162DAE00732980 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BFBA61E162DAE00732980 /* UIView+Frame.swift */; };
 		E11BFBAA1E1661BF00732980 /* ControllersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BFBA91E1661BF00732980 /* ControllersManager.swift */; };
@@ -88,6 +89,7 @@
 		E101F2181E14B96D0049A513 /* HomeRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRootController.swift; sourceTree = "<group>"; };
 		E101F21C1E14BEC60049A513 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E101F2211E14C2740049A513 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E105F4841E4C2165006D3D0D /* AgreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreeView.swift; sourceTree = "<group>"; };
 		E11BFBA41E16018B00732980 /* CustomerizedFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerizedFont.swift; sourceTree = "<group>"; };
 		E11BFBA61E162DAE00732980 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		E11BFBA91E1661BF00732980 /* ControllersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllersManager.swift; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 			children = (
 				E1836C681E2334EB00FBB249 /* CaptchaView.swift */,
 				E1836C661E2334D900FBB249 /* PasswordView.swift */,
+				E105F4841E4C2165006D3D0D /* AgreeView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				E11BFBAD1E1668DB00732980 /* GlobalManager.swift in Sources */,
 				E11BFBCA1E1B745500732980 /* InvestmentRootController.swift in Sources */,
 				E1836C6D1E23844400FBB249 /* CustomButton.swift in Sources */,
+				E105F4851E4C2165006D3D0D /* AgreeView.swift in Sources */,
 				E101F2221E14C2740049A513 /* CustomTextField.swift in Sources */,
 				E101F20D1E127AC30049A513 /* UIImage+Common.swift in Sources */,
 				E11BFBA71E162DAE00732980 /* UIView+Frame.swift in Sources */,

@@ -14,7 +14,7 @@ class RegisterModel: NSObject {
         NetAPIManager.sharedManager.request(path: GetMobileCaptchaUrl, params: params, methodType: NetworkMethod.Get, block: block)
     }
     
-    func userRegister(params: Dictionary<String, Any>, block: @escaping responseBlock) {
+    class func userRegister(params: Dictionary<String, Any>, block: @escaping responseBlock) {
         
     }
 }

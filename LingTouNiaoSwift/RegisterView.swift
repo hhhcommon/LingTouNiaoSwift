@@ -8,7 +8,14 @@
 
 import UIKit
 
-class RegisterView: UIView {
+class RegisterView: UIView, AgreeViewDelegate {
+    
+    internal func showProtocol() {
+        
+    }
+    internal func agreeProtocol(agree: Bool) {
+        
+    }
     
     var captchaButton: UIButton?
     var registerSubmitBlock: ((UIButton) -> ())?
@@ -45,6 +52,11 @@ class RegisterView: UIView {
         return button
     }()
     
+    lazy var agreeView: AgreeView = {
+        var agreeView = AgreeView.init(agreeTitle: "我已阅读并同意", protocolName: "《在线服务协议》", fontSize: 12, delegate: self)
+        return agreeView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addAllSubviews()
@@ -60,6 +72,7 @@ class RegisterView: UIView {
         self.addSubview(passwordView)
         self.addSubview(captchaView)
         self.addSubview(registerButton)
+        self.addSubview(agreeView)
         self.passwordTextField = passwordView.passwordTextField
         self.captchaTextField = captchaView.captchaTextField
         captchaButton = captchaView.captchaButton
@@ -78,8 +91,14 @@ class RegisterView: UIView {
             make.top.equalTo(passwordView.snp.bottom)
             make.left.width.height.equalTo(passwordView)
         }
+        agreeView.snp.makeConstraints { (make) in
+            make.top.equalTo(captchaView.snp.bottom).offset(16)
+            make.centerX.equalTo(captchaView)
+            make.width.equalTo(captchaView)
+            make.height.equalTo(24)
+        }
         registerButton.snp.makeConstraints { (make) in
-            make.top.equalTo(captchaView.snp.bottom).offset(30)
+            make.top.equalTo(agreeView.snp.bottom).offset(30)
             make.left.width.equalTo(captchaView)
             make.height.equalTo(GeneralSize)
         }
