@@ -73,4 +73,12 @@ class GlobalManager: NSObject {
         // todo:
         return ""
     }
+    
+    class func deleteAllHTTPCookies() {
+        let cookieStorage = HTTPCookieStorage.shared
+        for cookie in cookieStorage.cookies! {
+            cookieStorage.deleteCookie(cookie)
+        }
+        URLCache.shared.removeAllCachedResponses()
+    }
 }

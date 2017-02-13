@@ -11,12 +11,14 @@ import UIKit
 class RegisterView: UIView, AgreeViewDelegate {
     
     internal func showProtocol() {
-        
+        // TODO:
     }
     internal func agreeProtocol(agree: Bool) {
-        
+        agreeProtocol = agree
+        self.changeRegisterButtonStatus()
     }
     
+    var agreeProtocol = true
     var captchaButton: UIButton?
     var registerSubmitBlock: ((UIButton) -> ())?
     var getCaptchaBlock: ((UIButton) -> ())? {
@@ -26,6 +28,7 @@ class RegisterView: UIView, AgreeViewDelegate {
         }
     }
     
+    // 手机号
     lazy var telephoneTextField: CustomTextField = {
         var textField = CustomTextField.init(leftIconName: "icon_mobileno", placeholder: "推荐使用银行预留手机号")
         textField.drawBottomLine = true
@@ -34,16 +37,19 @@ class RegisterView: UIView, AgreeViewDelegate {
         return textField
     }()
 
+    // 密码view
     var passwordTextField: CustomTextField?
     lazy var passwordView: PasswordView = {
         return PasswordView()
     }()
     
+    // 短信验证码view
     var captchaTextField: CustomTextField?
     lazy var captchaView: CaptchaView = {
         return CaptchaView(loginType: .register)
     }()
     
+    // 注册按钮
     lazy var registerButton: CustomButton = {
         var button = CustomButton.createBGButtonWithCorner(title: "注册", actionBlock: { (button) in
             self.registerSubmit()
@@ -52,10 +58,38 @@ class RegisterView: UIView, AgreeViewDelegate {
         return button
     }()
     
+    // 同意并阅读协议view
     lazy var agreeView: AgreeView = {
         var agreeView = AgreeView.init(agreeTitle: "我已阅读并同意", protocolName: "《在线服务协议》", fontSize: 12, delegate: self)
         return agreeView
     }()
+    
+    // 推荐人button
+    lazy var refereeButton: UIButton = {
+        var button = UIButton.createButton(title: "我有推荐人", color:LinkColor, font: normalFont(16), block: { (button) in
+            self.clickReferee(button: button)
+        })
+        return button
+    }()
+    
+    // 推荐邀请码
+    lazy var refereeTextField: CustomTextField = {
+        var textField = CustomTextField.init(leftIconName: "icon_recommend", placeholder: "请输入推荐人手机号")
+        textField.drawBottomLine = true
+        textField.drawTopLine = true
+        textField.limitedCount = 11
+        textField.isHidden = true
+        textField.keyboardType = UIKeyboardType.numberPad
+        return textField
+    }()
+
+    // TODO:
+    // 温馨提示
+//    LTNPromptView * promptView = [LTNPromptView promptWithIcon:@"icon_note_small" iconSpace:6 Text:locationString(@"register_prompt") font:kFont(12) textWidth:DimensionBaseIphone6(237)];
+//    CGPoint promptCenter = CGPointMake(kScreenWidth * 0.5,  CGRectGetMaxY(registerButton.frame) + (kFieldHeight + promptView.bounds.size.height) * 0.5);
+//    promptView.center = promptCenter;
+//    [self.view addSubview:promptView];
+//    self.promptView = promptView;
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,8 +105,10 @@ class RegisterView: UIView, AgreeViewDelegate {
         self.addSubview(telephoneTextField)
         self.addSubview(passwordView)
         self.addSubview(captchaView)
-        self.addSubview(registerButton)
         self.addSubview(agreeView)
+        self.addSubview(refereeButton)
+        self.addSubview(refereeTextField)
+        self.addSubview(registerButton)
         self.passwordTextField = passwordView.passwordTextField
         self.captchaTextField = captchaView.captchaTextField
         captchaButton = captchaView.captchaButton
@@ -97,21 +133,44 @@ class RegisterView: UIView, AgreeViewDelegate {
             make.width.equalTo(captchaView)
             make.height.equalTo(24)
         }
+        
+        refereeButton.snp.makeConstraints { (make) in
+            make.top.equalTo(agreeView.snp.bottom).offset(10)
+            make.centerX.equalTo(agreeView)
+        }
+        
+        refereeTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(refereeButton.snp.bottom).offset(5)
+            make.left.width.height.equalTo(captchaView)
+        }
+        
         registerButton.snp.makeConstraints { (make) in
-            make.top.equalTo(agreeView.snp.bottom).offset(30)
-            make.left.width.equalTo(captchaView)
+            make.top.equalTo(refereeButton.snp.bottom).offset(5)
+            make.left.width.equalTo(refereeTextField)
             make.height.equalTo(GeneralSize)
         }
     }
     
     func registerNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.textFieldTextDidChange(textField:)), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.textFieldTextDidChange(notification:)), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
     }
     
     // notification methods
-    @objc fileprivate func textFieldTextDidChange(textField: UITextField) {
-        if (telephoneTextField.text?.characters.count)! > 0 && (passwordTextField?.text?.characters.count)! > 0 && (captchaTextField?.text?.characters.count)! > 0 {
-            registerButton.isEnabled = true
+    @objc fileprivate func textFieldTextDidChange(notification: Notification) {
+        self.changeRegisterButtonStatus()
+    }
+    
+    fileprivate func changeRegisterButtonStatus() {
+        if agreeProtocol && (telephoneTextField.text?.characters.count)! > 0 && (passwordTextField?.text?.characters.count)! > 0 && (captchaTextField?.text?.characters.count)! > 0 {
+            if refereeButton.isSelected {
+                if (refereeTextField.text?.characters.count)! > 0 {
+                    registerButton.isEnabled = true
+                } else {
+                    registerButton.isEnabled = false
+                }
+            } else {
+                registerButton.isEnabled = true
+            }
         } else {
             registerButton.isEnabled = false
         }
@@ -129,5 +188,36 @@ class RegisterView: UIView, AgreeViewDelegate {
     
     func stopTimer() {
         captchaView.stopTimer()
+    }
+    
+    func clickReferee(button: UIButton) {
+        button.isSelected = !button.isSelected
+        refereeTextField.isHidden = !button.isSelected
+        if button.isSelected {
+            refereeTextField.text = ""
+        }
+        self.changeRegisterButtonStatus()
+        self.updateConstraints()
+    }
+    
+    override func needsUpdateConstraints() -> Bool {
+        return true
+    }
+    
+    override func updateConstraints() {
+        if refereeButton.isSelected {
+            registerButton.snp.remakeConstraints { (make) in
+                make.top.equalTo(refereeTextField.snp.bottom).offset(16)
+                make.left.width.equalTo(refereeTextField)
+                make.height.equalTo(GeneralSize)
+            }
+        } else {
+            registerButton.snp.remakeConstraints { (make) in
+                make.top.equalTo(refereeButton.snp.bottom).offset(5)
+                make.left.width.equalTo(refereeTextField)
+                make.height.equalTo(GeneralSize)
+            }
+        }
+        super.updateConstraints()
     }
 }

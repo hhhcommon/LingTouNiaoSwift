@@ -52,30 +52,35 @@ class RegisterController: BaseViewController {
     
     fileprivate func registerSubmit(_ button: UIButton) {
         if !String.isPhoneNumber(string: registerView.telephoneTextField.text!) {
-            print("手机号错误")
+            _ = NSObject.showMessage(message: "手机号错误")
             return
         }
         
         if !String.isPassword(string: (registerView.passwordTextField?.text)!) {
-            print("密码错误")
+            _ = NSObject.showMessage(message: "密码错误")
             return
         }
         
         if registerView.captchaTextField?.text?.characters.count != 4 {
-            print("验证码错误")
+            _ = NSObject.showMessage(message: "验证码错误")
             return
         }
-        print("输入内容正确")
         
-//        "partnerMobile" : referee,
-//        "readAndAgree" : @(agree)
-        let dictionary = [
+        if registerView.registerButton.isSelected && !String.isPhoneNumber(string: registerView.refereeTextField.text!) {
+            _ = NSObject.showMessage(message: "推荐人手机号错误")
+        }
+        
+        let dictionary: Dictionary<String, Any> = [
             "mobileNo" : registerView.telephoneTextField.text!,
-            "password" : registerView.passwordTextField?.text,
-            "mobileCode" : registerView.captchaTextField?.text
+            "password" : (registerView.passwordTextField?.text)!,
+            "mobileCode" : (registerView.captchaTextField?.text)!,
+            "partnerMobile" : registerView.refereeTextField.text ?? "",
+            "readAndAgree" : NSNumber.init(value: 1)
             ]
         RegisterModel.userRegister(params: dictionary) { (response, error) in
-            
+            if error == nil {
+                self.back()
+            }
         }
     }
 }
