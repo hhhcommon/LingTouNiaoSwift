@@ -11,18 +11,7 @@ import UIKit
 class CurrentUser: NSObject {
     
     // 用户sessionKey
-    var sessionKey: String? {
-        get {
-            if (self.sessionKey?.isEmpty)! {
-                return ""
-            } else {
-                return self.sessionKey
-            }
-        }
-        set {
-            self.sessionKey = newValue
-        }
-    }
+    var sessionKey: String?
     
     static let mine = CurrentUser()
     private override init() {
@@ -30,6 +19,8 @@ class CurrentUser: NSObject {
         let sessionKey = UserDefaults.standard.value(forKey: SessionKey) as? String
         if sessionKey != nil && (sessionKey?.isEmpty)! {
             self.sessionKey = sessionKey
+        } else {
+            self.sessionKey = ""
         }
     }
     

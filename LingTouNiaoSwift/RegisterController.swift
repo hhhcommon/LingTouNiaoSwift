@@ -79,7 +79,8 @@ class RegisterController: BaseViewController {
             ]
         RegisterModel.userRegister(params: dictionary) { (response, error) in
             if error == nil {
-                self.back()
+                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.finishBlock()
             }
         }
     }

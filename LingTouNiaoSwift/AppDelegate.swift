@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         
-        let manager = ControllersManager.sharedManager
-        manager.setupProjectRootViewController()
+        ControllersManager.shared.setupProjectRootViewController()
         
         window?.makeKeyAndVisible()
         

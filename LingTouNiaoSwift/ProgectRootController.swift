@@ -44,4 +44,20 @@ class ProgectRootController: UITabBarController, UITabBarControllerDelegate {
         let controllers = [homeNav, investmentNav, discoverNav, accountNav]
         self.viewControllers = controllers
     }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        let naviController = viewController as! UINavigationController
+        if naviController.topViewController is AccountRootController {
+            if CurrentUser.mine.hasLogged() {
+                return true
+            } else {
+                ControllersManager.shared.loginController(finishBlock: { () in
+                    self.selectedIndex = 3
+                })
+                return false
+            }
+        }
+        return true
+    }
 }

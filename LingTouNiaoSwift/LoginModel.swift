@@ -29,12 +29,13 @@ class LoginModel: NSObject {
     
     class func userLogin(params: Dictionary<String, Any>, block: @escaping responseBlock) {
         NetAPIManager.sharedManager.request(path: UserLoginUrl, params: params, methodType: NetworkMethod.Post, block: { (response, error) in
-            if error != nil {
+            if error == nil {
                 if let dic = response as? Dictionary<String, Any> {
-                    UserDefaults.standard.set(dic["sessionKey"], forKey: SessionKey)
+                    let data: Dictionary<String, Any> = dic["data"] as! Dictionary
+                    UserDefaults.standard.set(data["sessionKey"], forKey: SessionKey)
                     UserDefaults.standard.set(params["mobileNo"], forKey: MobileNo)
                     UserDefaults.standard.synchronize()
-                    CurrentUser.loginSuccess(sessionKey: dic["sessionKey"] as! String)
+                    CurrentUser.loginSuccess(sessionKey: data["sessionKey"] as! String)
                     
                 }
             }

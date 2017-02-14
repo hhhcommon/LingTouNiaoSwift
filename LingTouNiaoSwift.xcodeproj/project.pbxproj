@@ -24,6 +24,9 @@
 		E101F2221E14C2740049A513 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101F2211E14C2740049A513 /* CustomTextField.swift */; };
 		E105F4851E4C2165006D3D0D /* AgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105F4841E4C2165006D3D0D /* AgreeView.swift */; };
 		E105F4891E51AE14006D3D0D /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105F4881E51AE14006D3D0D /* CurrentUser.swift */; };
+		E105F48B1E52AC29006D3D0D /* UINavigationController+FinishBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105F48A1E52AC29006D3D0D /* UINavigationController+FinishBlock.swift */; };
+		E105F48E1E52DB09006D3D0D /* PresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105F48D1E52DB09006D3D0D /* PresentTransition.swift */; };
+		E105F4901E52DB3B006D3D0D /* UINavigationController+PresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105F48F1E52DB3B006D3D0D /* UINavigationController+PresentTransition.swift */; };
 		E11BFBA51E16018B00732980 /* CustomerizedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BFBA41E16018B00732980 /* CustomerizedFont.swift */; };
 		E11BFBA71E162DAE00732980 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BFBA61E162DAE00732980 /* UIView+Frame.swift */; };
 		E11BFBAA1E1661BF00732980 /* ControllersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BFBA91E1661BF00732980 /* ControllersManager.swift */; };
@@ -92,6 +95,9 @@
 		E101F2211E14C2740049A513 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E105F4841E4C2165006D3D0D /* AgreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreeView.swift; sourceTree = "<group>"; };
 		E105F4881E51AE14006D3D0D /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		E105F48A1E52AC29006D3D0D /* UINavigationController+FinishBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+FinishBlock.swift"; sourceTree = "<group>"; };
+		E105F48D1E52DB09006D3D0D /* PresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentTransition.swift; sourceTree = "<group>"; };
+		E105F48F1E52DB3B006D3D0D /* UINavigationController+PresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+PresentTransition.swift"; sourceTree = "<group>"; };
 		E11BFBA41E16018B00732980 /* CustomerizedFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerizedFont.swift; sourceTree = "<group>"; };
 		E11BFBA61E162DAE00732980 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		E11BFBA91E1661BF00732980 /* ControllersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllersManager.swift; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 		E101F2061E1214E30049A513 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E105F48C1E52B15E006D3D0D /* PresentTransition */,
 				E1C6A73C1E2C9E7E00EE405A /* Tool */,
 				E11BFBA81E1661AB00732980 /* Mananger */,
 				E11BFBA31E16016D00732980 /* Utility */,
@@ -248,6 +255,7 @@
 				E1C6A75C1E2E100400EE405A /* String+Common.swift */,
 				E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */,
 				E1C6A7701E349D1100EE405A /* String+Check.swift */,
+				E105F48A1E52AC29006D3D0D /* UINavigationController+FinishBlock.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -352,6 +360,15 @@
 				E105F4881E51AE14006D3D0D /* CurrentUser.swift */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		E105F48C1E52B15E006D3D0D /* PresentTransition */ = {
+			isa = PBXGroup;
+			children = (
+				E105F48D1E52DB09006D3D0D /* PresentTransition.swift */,
+				E105F48F1E52DB3B006D3D0D /* UINavigationController+PresentTransition.swift */,
+			);
+			name = PresentTransition;
 			sourceTree = "<group>";
 		};
 		E11BFBA31E16016D00732980 /* Utility */ = {
@@ -789,6 +806,7 @@
 				E101F20D1E127AC30049A513 /* UIImage+Common.swift in Sources */,
 				E11BFBA71E162DAE00732980 /* UIView+Frame.swift in Sources */,
 				E101F1D11E111ABC0049A513 /* AppDelegate.swift in Sources */,
+				E105F48E1E52DB09006D3D0D /* PresentTransition.swift in Sources */,
 				E101F1FF1E120EEA0049A513 /* BaseViewController.swift in Sources */,
 				E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */,
 				E1C6A7711E349D1100EE405A /* String+Check.swift in Sources */,
@@ -803,6 +821,7 @@
 				E101F2011E120F310049A513 /* BaseNavigationController.swift in Sources */,
 				E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */,
 				E1C6A7761E35E63900EE405A /* LoginModel.swift in Sources */,
+				E105F4901E52DB3B006D3D0D /* UINavigationController+PresentTransition.swift in Sources */,
 				E147B02F1E1CC7B100CCB8BB /* LoginView.swift in Sources */,
 				E11BFBB01E1B49B800732980 /* RegisterController.swift in Sources */,
 				E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */,
@@ -813,6 +832,7 @@
 				E1836C6B1E23757C00FBB249 /* UIButton+Common.swift in Sources */,
 				E105F4891E51AE14006D3D0D /* CurrentUser.swift in Sources */,
 				E101F21D1E14BEC60049A513 /* LoginController.swift in Sources */,
+				E105F48B1E52AC29006D3D0D /* UINavigationController+FinishBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

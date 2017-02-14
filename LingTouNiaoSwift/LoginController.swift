@@ -77,6 +77,7 @@ class LoginController: BaseViewController {
         LoginModel.userLogin(params: dictionary) { (response, error) in
             button.isEnabled = true
             if error == nil {
+                self.navigationController?.finishBlock()
                 self.back()
             }
         }
