@@ -37,6 +37,13 @@
 		E11BFBC81E1B743B00732980 /* DiscoverRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BFBC71E1B743B00732980 /* DiscoverRootController.swift */; };
 		E11BFBCA1E1B745500732980 /* InvestmentRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BFBC91E1B745500732980 /* InvestmentRootController.swift */; };
 		E147B02F1E1CC7B100CCB8BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E147B02E1E1CC7B100CCB8BB /* LoginView.swift */; };
+		E17BD5F51E53FEF700275E7D /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD5F41E53FEF700275E7D /* ProductListCell.swift */; };
+		E17BD5F71E53FF6D00275E7D /* BaseProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD5F61E53FF6D00275E7D /* BaseProductListCell.swift */; };
+		E17BD5F91E5403D400275E7D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD5F81E5403D400275E7D /* BaseModel.swift */; };
+		E17BD5FB1E5403ED00275E7D /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD5FA1E5403ED00275E7D /* ProductModel.swift */; };
+		E17BD5FD1E54236A00275E7D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD5FC1E54236A00275E7D /* UserModel.swift */; };
+		E17BD5FF1E5423B000275E7D /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD5FE1E5423B000275E7D /* UserInfoModel.swift */; };
+		E17BD6011E5423BD00275E7D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6001E5423BD00275E7D /* AccountInfoModel.swift */; };
 		E1836C671E2334D900FBB249 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C661E2334D900FBB249 /* PasswordView.swift */; };
 		E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C681E2334EB00FBB249 /* CaptchaView.swift */; };
 		E1836C6B1E23757C00FBB249 /* UIButton+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */; };
@@ -108,6 +115,13 @@
 		E11BFBC71E1B743B00732980 /* DiscoverRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverRootController.swift; sourceTree = "<group>"; };
 		E11BFBC91E1B745500732980 /* InvestmentRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentRootController.swift; sourceTree = "<group>"; };
 		E147B02E1E1CC7B100CCB8BB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E17BD5F41E53FEF700275E7D /* ProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		E17BD5F61E53FF6D00275E7D /* BaseProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProductListCell.swift; sourceTree = "<group>"; };
+		E17BD5F81E5403D400275E7D /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		E17BD5FA1E5403ED00275E7D /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		E17BD5FC1E54236A00275E7D /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E17BD5FE1E5423B000275E7D /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		E17BD6001E5423BD00275E7D /* AccountInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
 		E1836C661E2334D900FBB249 /* PasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		E1836C681E2334EB00FBB249 /* CaptchaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaView.swift; sourceTree = "<group>"; };
 		E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Common.swift"; sourceTree = "<group>"; };
@@ -296,6 +310,7 @@
 		E101F2151E14B91B0049A513 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E17BD5F31E53FDC000275E7D /* View */,
 				E11BFBBF1E1B737100732980 /* Controller */,
 			);
 			name = Home;
@@ -349,7 +364,11 @@
 		E105F4861E51ADF7006D3D0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E17BD6031E54257700275E7D /* UserInfo */,
+				E17BD6021E54255C00275E7D /* AccountInfo */,
 				E105F4871E51ADFE006D3D0D /* User */,
+				E17BD5F81E5403D400275E7D /* BaseModel.swift */,
+				E17BD5FA1E5403ED00275E7D /* ProductModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -358,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				E105F4881E51AE14006D3D0D /* CurrentUser.swift */,
+				E17BD5FC1E54236A00275E7D /* UserModel.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -467,6 +487,8 @@
 		E11BFBBA1E1B731A00732980 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E17BD5F41E53FEF700275E7D /* ProductListCell.swift */,
+				E17BD5F61E53FF6D00275E7D /* BaseProductListCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -555,6 +577,29 @@
 				E11BFBC71E1B743B00732980 /* DiscoverRootController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		E17BD5F31E53FDC000275E7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E17BD6021E54255C00275E7D /* AccountInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E17BD6001E5423BD00275E7D /* AccountInfoModel.swift */,
+			);
+			name = AccountInfo;
+			sourceTree = "<group>";
+		};
+		E17BD6031E54257700275E7D /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E17BD5FE1E5423B000275E7D /* UserInfoModel.swift */,
+			);
+			name = UserInfo;
 			sourceTree = "<group>";
 		};
 		E1C6A73C1E2C9E7E00EE405A /* Tool */ = {
@@ -797,10 +842,14 @@
 				E1836C671E2334D900FBB249 /* PasswordView.swift in Sources */,
 				E101F2111E14B1710049A513 /* UIBarButtonItem+ClearBackground.swift in Sources */,
 				E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */,
+				E17BD6011E5423BD00275E7D /* AccountInfoModel.swift in Sources */,
 				E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */,
 				E11BFBAD1E1668DB00732980 /* GlobalManager.swift in Sources */,
 				E11BFBCA1E1B745500732980 /* InvestmentRootController.swift in Sources */,
+				E17BD5FB1E5403ED00275E7D /* ProductModel.swift in Sources */,
+				E17BD5F71E53FF6D00275E7D /* BaseProductListCell.swift in Sources */,
 				E1836C6D1E23844400FBB249 /* CustomButton.swift in Sources */,
+				E17BD5FF1E5423B000275E7D /* UserInfoModel.swift in Sources */,
 				E105F4851E4C2165006D3D0D /* AgreeView.swift in Sources */,
 				E101F2221E14C2740049A513 /* CustomTextField.swift in Sources */,
 				E101F20D1E127AC30049A513 /* UIImage+Common.swift in Sources */,
@@ -823,6 +872,9 @@
 				E1C6A7761E35E63900EE405A /* LoginModel.swift in Sources */,
 				E105F4901E52DB3B006D3D0D /* UINavigationController+PresentTransition.swift in Sources */,
 				E147B02F1E1CC7B100CCB8BB /* LoginView.swift in Sources */,
+				E17BD5F91E5403D400275E7D /* BaseModel.swift in Sources */,
+				E17BD5FD1E54236A00275E7D /* UserModel.swift in Sources */,
+				E17BD5F51E53FEF700275E7D /* ProductListCell.swift in Sources */,
 				E11BFBB01E1B49B800732980 /* RegisterController.swift in Sources */,
 				E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */,
 				E11BFBAA1E1661BF00732980 /* ControllersManager.swift in Sources */,

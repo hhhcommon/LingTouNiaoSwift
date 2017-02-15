@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentUser: NSObject {
+class CurrentUser: UserModel {
     
     // 用户sessionKey
     var sessionKey: String?
@@ -48,4 +48,8 @@ class CurrentUser: NSObject {
         UserDefaults.standard.synchronize()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginSuccessNotification), object: nil, userInfo: nil)
     }
+}
+
+extension CurrentUser {
+    
 }
