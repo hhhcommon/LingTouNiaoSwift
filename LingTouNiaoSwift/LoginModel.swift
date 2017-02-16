@@ -28,7 +28,7 @@ class LoginModel: NSObject {
     }
     
     class func userLogin(params: Dictionary<String, Any>, block: @escaping responseBlock) {
-        NetAPIManager.sharedManager.request(path: UserLoginUrl, params: params, methodType: NetworkMethod.Post, block: { (response, error) in
+        NetAPIManager.shared.request(path: UserLoginUrl, params: params, methodType: NetworkMethod.Post, block: { (response, error) in
             if error == nil {
                 if let dic = response as? Dictionary<String, Any> {
                     let data: Dictionary<String, Any> = dic["data"] as! Dictionary

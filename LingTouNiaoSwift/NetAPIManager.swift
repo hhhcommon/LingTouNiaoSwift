@@ -10,6 +10,7 @@ import UIKit
 import AFNetworking
 
 typealias responseBlock = ((_ response: Any?, _ error: Error?) -> Void)
+typealias responsedDataBlock = ((_ response: Any?, _ data: Any?, _ error: Error?) -> Void)
 
 enum NetworkMethod {
     case Get
@@ -28,7 +29,7 @@ func pathKey(path: String?, parameters: NSDictionary?) -> String {
 
 class NetAPIManager: AFHTTPSessionManager {
     
-    static let sharedManager = NetAPIManager();
+    static let shared = NetAPIManager();
     let private_key = "ltn$%^qpdhTH18"
     
     func request(path: String, params: Dictionary<String, Any>?, methodType: NetworkMethod, block: @escaping responseBlock) -> Void {

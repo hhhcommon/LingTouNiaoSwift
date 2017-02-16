@@ -10,7 +10,7 @@ import UIKit
 import MJExtension
 
 class BaseModel: NSObject {
-
+    
     override init() {
         super.init()
         BaseModel.mj_referenceReplacedKey(whenCreatingKeyValues: true)

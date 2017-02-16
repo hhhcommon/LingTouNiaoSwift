@@ -162,4 +162,9 @@ class ProductModel: BaseModel {
             return "\(productDeadline)"
         }
     }
+    
+    // 是否为还款中
+    func isRepaymenting() -> Bool {
+        return self.productStatus >= 2 && !(self.productType == "TYB")
+    }
 }

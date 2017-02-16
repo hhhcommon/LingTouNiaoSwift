@@ -11,11 +11,11 @@ import UIKit
 class RegisterModel: NSObject {
     
     class func getMessageCode(params: Dictionary<String, Any>, block: @escaping responseBlock) {
-        NetAPIManager.sharedManager.request(path: GetMobileCaptchaUrl, params: params, methodType: NetworkMethod.Get, block: block)
+        NetAPIManager.shared.request(path: GetMobileCaptchaUrl, params: params, methodType: NetworkMethod.Get, block: block)
     }
     
     class func userRegister(params: Dictionary<String, Any>, block: @escaping responseBlock) {
-        NetAPIManager.sharedManager.request(path: UserRegisterUrl, params: params, methodType: NetworkMethod.Post, block: { (response, error) in
+        NetAPIManager.shared.request(path: UserRegisterUrl, params: params, methodType: NetworkMethod.Post, block: { (response, error) in
             if error == nil {
                 if let dic = response as? Dictionary<String, Any> {
                     let data: Dictionary<String, Any> = dic["data"] as! Dictionary

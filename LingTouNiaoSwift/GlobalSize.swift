@@ -19,9 +19,9 @@ let CommonMargin: CGFloat = 15
 
 // 屏幕尺寸
 // 目标屏幕的宽
-let ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
+let ScreenWidth = UIScreen.main.bounds.size.width
 // 目标屏幕的高
-let ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
+let ScreenHeight = UIScreen.main.bounds.size.height
 // 目标屏幕尺寸
 let ScreenBounds = UIScreen.main.bounds
 // 状态栏高度

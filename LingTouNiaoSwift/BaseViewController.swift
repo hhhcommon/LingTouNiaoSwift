@@ -20,7 +20,7 @@ class BaseViewController: UIViewController {
         if (navigationController is BaseNavigationController) {
             baseNavigationController = navigationController as? BaseNavigationController
         }
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = BackgroundColor
         self.showCloseButton(isShow: false)
         self.showBackButton(isShow: true)
     }
