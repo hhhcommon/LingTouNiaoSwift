@@ -17,7 +17,7 @@ class CurrentUser: UserModel {
     private override init() {
         super.init()
         let sessionKey = UserDefaults.standard.value(forKey: SessionKey) as? String
-        if sessionKey != nil && (sessionKey?.isEmpty)! {
+        if sessionKey != nil && !(sessionKey?.isEmpty)! {
             self.sessionKey = sessionKey
         } else {
             self.sessionKey = ""
