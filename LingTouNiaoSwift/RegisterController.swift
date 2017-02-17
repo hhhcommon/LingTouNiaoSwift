@@ -15,6 +15,7 @@ class RegisterController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "注册"
+        self.view.backgroundColor = UIColor.white
         view.addSubview(registerView)
         registerView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

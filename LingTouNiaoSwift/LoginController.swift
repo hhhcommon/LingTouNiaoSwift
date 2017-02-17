@@ -15,6 +15,7 @@ class LoginController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "登录"
+        self.view.backgroundColor = UIColor.white
         self.showCloseButton(isShow: true)
         baseNavigationController?.hideBorder(isHidden: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarItem(title: "注册", target: self, action: #selector(self.registerSubmit), color: UIColor.colorWithHex(hex: 0x3a3a3a))

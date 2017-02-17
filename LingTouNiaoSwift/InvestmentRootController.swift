@@ -25,7 +25,7 @@ class InvestmentRootController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func registerCell() {
-        tableView!.register(BaseProductListCell.classForCoder(), forCellReuseIdentifier: "ProductListCell")
+        tableView!.register(ProductListCell.classForCoder(), forCellReuseIdentifier: "ProductListCell")
     }
     
     func loadData() {
@@ -57,7 +57,7 @@ class InvestmentRootController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = BaseProductListCell(style: UITableViewCellStyle.default, reuseIdentifier: "ProductListCell")
+        let cell = ProductListCell(style: UITableViewCellStyle.default, reuseIdentifier: "ProductListCell")
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.product = sourceData[indexPath.row]
         return cell

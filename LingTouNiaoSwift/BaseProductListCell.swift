@@ -10,7 +10,7 @@ import UIKit
 
 class BaseProductListCell: UITableViewCell {
 
-    let BaseProductListCellHeight = 150
+    let BaseProductListCellHeight: CGFloat = 150
     let leftMargin: CGFloat = 24
     let topMargin: CGFloat = 15
     var product: ProductModel? {
@@ -26,7 +26,7 @@ class BaseProductListCell: UITableViewCell {
     
     let backView = UIView()
     let productNameLabel: UILabel = {
-        var productNameLabel = UILabel()
+        let productNameLabel = UILabel()
         productNameLabel.font = normalFont(16)
         return productNameLabel
     }()
@@ -36,14 +36,14 @@ class BaseProductListCell: UITableViewCell {
     
     // 年化收益率
     let annualIncomeTitleLabel: UILabel = {
-        var label = UILabel()
+        let label = UILabel()
         label.font = normalFont(12)
         label.text = "年化收益率"
         return label
     }()
     
     let annualIncomeDataLabel: UILabel = {
-        var label = UILabel()
+        let label = UILabel()
         label.font = normalFont(30)
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -51,28 +51,28 @@ class BaseProductListCell: UITableViewCell {
     
     // 投资期限
     let investDateTitleLabel: UILabel = {
-        var label = UILabel()
+        let label = UILabel()
         label.font = normalFont(12)
         label.text = "投资期限"
         return label
     }()
     
     let investDateDataLabel: UILabel = {
-        var label = UILabel()
+        let label = UILabel()
         label.font = normalFont(24)
         return label
     }()
     
     // 剩余金额
     let remainingAmountTitleLabel: UILabel = {
-        var label = UILabel()
+        let label = UILabel()
         label.font = normalFont(12)
         label.text = "剩余金额"
         return label
     }()
     
     let remainingAmountDataLabel: UILabel = {
-        var label = UILabel()
+        let label = UILabel()
         label.font = normalFont(16)
         return label
     }()
@@ -85,12 +85,42 @@ class BaseProductListCell: UITableViewCell {
         return progressView
     }()
     
+    // 起投金额
+    let staInvestAmountLable: UILabel = {
+        let label = UILabel()
+        label.font = normalFont(12)
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
     
+    // 产品类型tag
+    let tagLabel: UILabel = {
+        let label = UILabel()
+        label.font = normalFont(12)
+        return label
+    }()
+    
+    // 分隔线
+    let separateLine: UIView = {
+        let separateLine = UIView()
+        separateLine.backgroundColor = LineColor
+        return separateLine
+    }()
+    
+    // 购买按钮
+    let purchaseButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = normalFont(14)
+        button.setTitleColor(UIColor.white, for: UIControlState.normal)
+        button.layer.cornerRadius = 2.5
+        button.layer.masksToBounds = true
+        return button
+    }()
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = backgroundColor
-        backView.frame = CGRect(x: 0, y: 0, width: Int(ScreenWidth), height: self.BaseProductListCellHeight - 10)
+        backView.frame = CGRect(x: 0, y: 0, width: Int(ScreenWidth), height: Int(self.BaseProductListCellHeight - 10))
         contentView.addSubview(backView)
         backView.backgroundColor = UIColor.white
         self.addAllSubviews()
@@ -139,8 +169,9 @@ class BaseProductListCell: UITableViewCell {
         
         // 剩余金额
         remainingAmountTitleLabel.textColor = dataTitleColor
-        if product.productType != "TYB" {
+        if !product.isTYB() {
             remainingAmountTitleLabel.isHidden = false
+            remainingAmountDataLabel.isHidden = false
             let remainAmount: String
             if product.productRemainAmount >= 10000 {
                 remainAmount = String(format: "%.2f万", product.productRemainAmount / 10000.0)
@@ -151,6 +182,7 @@ class BaseProductListCell: UITableViewCell {
             remainingAmountDataLabel.text = remainAmount
         } else {
             remainingAmountTitleLabel.isHidden = true
+            remainingAmountDataLabel.isHidden = true
         }
         
         // 投资进度
@@ -159,8 +191,43 @@ class BaseProductListCell: UITableViewCell {
         progressView.progress = CGFloat(progress)
         
         // 起投金额
+        staInvestAmountLable.textColor = dataTitleColor
+        staInvestAmountLable.text = "\(product.staInvestAmount)元起投"
         
         // 产品类型
+        let tagString = product.isXSB() ? "仅可购买一个新手项目" : product.productTag
+        if tagString.isEmpty {
+            separateLine.isHidden = true
+            tagLabel.isHidden = true
+        } else {
+            separateLine.isHidden = false
+            tagLabel.isHidden = false
+            tagLabel.textColor = dataTitleColor
+            tagLabel.text = product.productTag
+        }
+        
+        // 购买按钮
+        purchaseButton.backgroundColor = product.isRepaymenting() ? DisabledColor : MainColor
+        var purchaseTitle: String
+        var purchaseEnabled: Bool
+        if product.isTYB() {
+            purchaseTitle = "立即体验"
+            purchaseEnabled = true
+        } else if product.isRepaymenting() {
+            purchaseTitle = "募集结束"
+            purchaseEnabled = false
+        } else {
+            purchaseTitle = "立即购买"
+            purchaseEnabled = true
+        }
+        
+        if product.isArrange == "1" && !product.isRepaymenting() {
+                purchaseTitle = "立即预约"
+                purchaseEnabled = true
+        }
+        
+        purchaseButton.setTitle(purchaseTitle, for: UIControlState.normal)
+        purchaseButton.isEnabled = purchaseEnabled
     }
     
     func addAllSubviews() {
@@ -202,17 +269,14 @@ class BaseProductListCell: UITableViewCell {
         // 4.年化收益率
         backView.addSubview(annualIncomeDataLabel)
         backView.addSubview(annualIncomeTitleLabel)
-//        annualIncomeDataLabel.backgroundColor = UIColor.colorWithRGBA(CGFloat(arc4random_uniform(255)), CGFloat(arc4random_uniform(255)), CGFloat(arc4random_uniform(255)), a: CGFloat(arc4random_uniform(10)) / 1.0)
         
         // 5.投资期限
         backView.addSubview(investDateDataLabel)
         backView.addSubview(investDateTitleLabel)
-//        investDateDataLabel.backgroundColor = UIColor.colorWithRGBA(CGFloat(arc4random_uniform(255)), CGFloat(arc4random_uniform(255)), CGFloat(arc4random_uniform(255)), a: CGFloat(arc4random_uniform(10)) / 1.0)
 
         // 6.剩余金额
         backView.addSubview(remainingAmountDataLabel)
         backView.addSubview(remainingAmountTitleLabel)
-//        remainingAmountDataLabel.backgroundColor = UIColor.colorWithRGBA(CGFloat(arc4random_uniform(255)), CGFloat(arc4random_uniform(255)), CGFloat(arc4random_uniform(255)), a: CGFloat(arc4random_uniform(10)) / 1.0)
 
         annualIncomeDataLabel.snp.makeConstraints { (make) in
             make.left.equalTo(productNameLabel)
@@ -263,6 +327,38 @@ class BaseProductListCell: UITableViewCell {
             make.width.equalToSuperview().offset(-2 * leftMargin)
             make.height.equalTo(1)
             make.top.equalTo(annualIncomeTitleLabel.snp.bottom).offset(10)
+        }
+        
+        // 8.起投金额
+        backView.addSubview(staInvestAmountLable)
+        staInvestAmountLable.snp.makeConstraints { (make) in
+            make.left.equalTo(leftMargin)
+            make.bottom.equalToSuperview().offset(-10)
+        }
+        
+        // 分隔线
+        backView.addSubview(separateLine)
+        separateLine.snp.makeConstraints { (make) in
+            make.left.equalTo(staInvestAmountLable.snp.right).offset(5)
+            make.centerY.equalTo(staInvestAmountLable)
+            make.height.equalTo(16)
+            make.width.equalTo(LineThick)
+        }
+        
+        // 产品标签
+        backView.addSubview(tagLabel)
+        tagLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(separateLine.snp.right).offset(5)
+            make.centerY.equalTo(separateLine)
+        }
+        
+        // 9.购买按钮
+        backView.addSubview(purchaseButton)
+        purchaseButton.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-leftMargin)
+            make.centerY.equalTo(tagLabel)
+            make.height.equalTo(24)
+            make.width.equalTo(70)
         }
         
         // 底部线条

@@ -10,26 +10,25 @@ import UIKit
 
 class BarProgressView: UIView {
 
-    var progress: CGFloat {
+    var progress: CGFloat = 0 {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
-    var progressColor: UIColor? {
+    var progressColor = MainColor {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
-    var groundColor: UIColor? {
+    var groundColor = UIColor.colorWithRGB(236, 236, 236) {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     override init(frame: CGRect) {
-        self.progress = 0
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
     }
@@ -47,25 +46,19 @@ class BarProgressView: UIView {
         
         let width = rect.size.width
         let height = rect.size.height
-        UIBezierPath(roundedRect: rect, cornerRadius: rect.height * 0.5).addClip()
+        UIBezierPath(roundedRect: rect, cornerRadius: height * 0.5).addClip()
         context?.setLineCap(CGLineCap.round)
         
         // 底部bar
-        
-        if groundColor == nil {
-            groundColor = UIColor.colorWithRGB(236, 236, 236)
-        }
-        groundColor!.set()
+        groundColor.set()
         context?.setLineWidth(height)
         context?.move(to: CGPoint(x: 0, y: height * 0.5))
         context?.addLine(to: CGPoint(x: width, y: height * 0.5))
         context?.strokePath()
         
         // 进度bar
-        if progressColor == nil {
-            progressColor = UIColor.colorWithRGB(253, 182, 10)
-        }
         let to = progress * width
+        progressColor.set()
         context?.move(to: CGPoint(x: 0, y: height * 0.5))
         context?.addLine(to: CGPoint(x: to, y: height * 0.5))
         context?.strokePath()

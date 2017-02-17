@@ -167,4 +167,13 @@ class ProductModel: BaseModel {
     func isRepaymenting() -> Bool {
         return self.productStatus >= 2 && !(self.productType == "TYB")
     }
+    
+    // 是否是新手标
+    func isXSB() -> Bool {
+        return self.productType == "XSB"
+    }
+    // 是否是体验标
+    func isTYB() -> Bool {
+        return self.productType == "TYB"
+    }
 }
