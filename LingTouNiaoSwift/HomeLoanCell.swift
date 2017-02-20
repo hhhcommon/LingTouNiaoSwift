@@ -10,8 +10,8 @@ import UIKit
 
 class HomeLoanCell: UITableViewCell {
 
-    let HomeLoanCellHeight = 75
-    let Margin = 12.5
+    let HomeLoanCellHeight: CGFloat = 75
+    let Margin: CGFloat = 12.5
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,7 +23,23 @@ class HomeLoanCell: UITableViewCell {
     }
     
     func addAllSubviews() {
+        let loanImage = UIImage.init(named: "jiekuan")
+        let loanImageView = UIImageView.init(image: loanImage)
+        self.contentView.addSubview(loanImageView)
         
+        let lineView = UIView()
+        lineView.backgroundColor = LineColor
+        self.contentView.addSubview(lineView)
+        
+        let insets = UIEdgeInsets(top: Margin * 0.5, left: Margin, bottom: Margin, right: Margin)
+        lineView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview().inset(insets)
+            make.top.equalToSuperview()
+            make.height.equalTo(1.0 / ScreenScale)
+        }
+        loanImageView.snp.makeConstraints { (make) in
+            make.left.right.top.equalToSuperview().inset(insets)
+            make.width.equalTo(loanImageView.snp.height).multipliedBy((loanImage?.size.width)! / (loanImage?.size.height)!)
+        }
     }
-
 }

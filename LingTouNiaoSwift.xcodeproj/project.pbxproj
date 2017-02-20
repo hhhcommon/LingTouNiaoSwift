@@ -48,6 +48,10 @@
 		E17BD6081E54739700275E7D /* BarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6071E54739700275E7D /* BarProgressView.swift */; };
 		E17BD60C1E558E9900275E7D /* BaseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD60B1E558E9900275E7D /* BaseDto.swift */; };
 		E17BD60F1E56FE6200275E7D /* HomeLoanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD60E1E56FE6200275E7D /* HomeLoanCell.swift */; };
+		E17BD6131E5A95A700275E7D /* CrowdfundingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6121E5A95A700275E7D /* CrowdfundingCell.swift */; };
+		E17BD6151E5A95B800275E7D /* CooperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6141E5A95B800275E7D /* CooperationCell.swift */; };
+		E17BD6181E5A95F600275E7D /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6171E5A95F600275E7D /* HomeHeaderView.swift */; };
+		E17BD61A1E5A960500275E7D /* HomeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6191E5A960500275E7D /* HomeSectionHeaderView.swift */; };
 		E1836C671E2334D900FBB249 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C661E2334D900FBB249 /* PasswordView.swift */; };
 		E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C681E2334EB00FBB249 /* CaptchaView.swift */; };
 		E1836C6B1E23757C00FBB249 /* UIButton+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */; };
@@ -130,6 +134,10 @@
 		E17BD6071E54739700275E7D /* BarProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarProgressView.swift; sourceTree = "<group>"; };
 		E17BD60B1E558E9900275E7D /* BaseDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDto.swift; sourceTree = "<group>"; };
 		E17BD60E1E56FE6200275E7D /* HomeLoanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeLoanCell.swift; sourceTree = "<group>"; };
+		E17BD6121E5A95A700275E7D /* CrowdfundingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdfundingCell.swift; sourceTree = "<group>"; };
+		E17BD6141E5A95B800275E7D /* CooperationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CooperationCell.swift; sourceTree = "<group>"; };
+		E17BD6171E5A95F600275E7D /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		E17BD6191E5A960500275E7D /* HomeSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSectionHeaderView.swift; sourceTree = "<group>"; };
 		E1836C661E2334D900FBB249 /* PasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		E1836C681E2334EB00FBB249 /* CaptchaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaView.swift; sourceTree = "<group>"; };
 		E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Common.swift"; sourceTree = "<group>"; };
@@ -593,6 +601,9 @@
 		E17BD5F31E53FDC000275E7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E17BD6161E5A95C200275E7D /* Header */,
+				E17BD6111E5A959500275E7D /* Crowdfunding */,
+				E17BD6101E5A958900275E7D /* Cooperation */,
 				E17BD60D1E56FE4500275E7D /* Loan */,
 			);
 			name = View;
@@ -636,6 +647,31 @@
 				E17BD60E1E56FE6200275E7D /* HomeLoanCell.swift */,
 			);
 			name = Loan;
+			sourceTree = "<group>";
+		};
+		E17BD6101E5A958900275E7D /* Cooperation */ = {
+			isa = PBXGroup;
+			children = (
+				E17BD6141E5A95B800275E7D /* CooperationCell.swift */,
+			);
+			name = Cooperation;
+			sourceTree = "<group>";
+		};
+		E17BD6111E5A959500275E7D /* Crowdfunding */ = {
+			isa = PBXGroup;
+			children = (
+				E17BD6121E5A95A700275E7D /* CrowdfundingCell.swift */,
+			);
+			name = Crowdfunding;
+			sourceTree = "<group>";
+		};
+		E17BD6161E5A95C200275E7D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				E17BD6171E5A95F600275E7D /* HomeHeaderView.swift */,
+				E17BD6191E5A960500275E7D /* HomeSectionHeaderView.swift */,
+			);
+			name = Header;
 			sourceTree = "<group>";
 		};
 		E1C6A73C1E2C9E7E00EE405A /* Tool */ = {
@@ -890,6 +926,7 @@
 				E101F2221E14C2740049A513 /* CustomTextField.swift in Sources */,
 				E101F20D1E127AC30049A513 /* UIImage+Common.swift in Sources */,
 				E17BD60F1E56FE6200275E7D /* HomeLoanCell.swift in Sources */,
+				E17BD6181E5A95F600275E7D /* HomeHeaderView.swift in Sources */,
 				E11BFBA71E162DAE00732980 /* UIView+Frame.swift in Sources */,
 				E101F1D11E111ABC0049A513 /* AppDelegate.swift in Sources */,
 				E105F48E1E52DB09006D3D0D /* PresentTransition.swift in Sources */,
@@ -900,6 +937,7 @@
 				E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */,
 				E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */,
 				E11BFBC81E1B743B00732980 /* DiscoverRootController.swift in Sources */,
+				E17BD6131E5A95A700275E7D /* CrowdfundingCell.swift in Sources */,
 				E101F20F1E138C6D0049A513 /* GlobalSize.swift in Sources */,
 				E101F2051E120FEE0049A513 /* GlobalAppearance.swift in Sources */,
 				E101F20B1E12163C0049A513 /* UIColor+HexColor.swift in Sources */,
@@ -919,8 +957,10 @@
 				E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */,
 				E11BFBAA1E1661BF00732980 /* ControllersManager.swift in Sources */,
 				E11BFBC41E1B73DB00732980 /* AccountRootController.swift in Sources */,
+				E17BD61A1E5A960500275E7D /* HomeSectionHeaderView.swift in Sources */,
 				E1F977B81E49B212001864A3 /* RegisterModel.swift in Sources */,
 				E11BFBA51E16018B00732980 /* CustomerizedFont.swift in Sources */,
+				E17BD6151E5A95B800275E7D /* CooperationCell.swift in Sources */,
 				E1836C6B1E23757C00FBB249 /* UIButton+Common.swift in Sources */,
 				E105F4891E51AE14006D3D0D /* CurrentUser.swift in Sources */,
 				E101F21D1E14BEC60049A513 /* LoginController.swift in Sources */,

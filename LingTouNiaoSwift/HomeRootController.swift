@@ -43,6 +43,7 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
     
     func registerCell() {
 //        tableView!.register(ProductListCell.classForCoder(), forCellReuseIdentifier: "ProductListCell")
+        tableView!.register(HomeLoanCell.classForCoder(), forCellReuseIdentifier: "HomeLoanCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,16 +52,17 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ProductListCell(style: UITableViewCellStyle.default, reuseIdentifier: "ProductListCell")
+//        let cell = ProductListCell(style: UITableViewCellStyle.default, reuseIdentifier: "ProductListCell")
+        let cell = HomeLoanCell(style: UITableViewCellStyle.default, reuseIdentifier: "HomeLoanCell")
         cell.selectionStyle = UITableViewCellSelectionStyle.none
 //        cell.product = sourceData[indexPath.row]
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 150
-//    }
-//    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
+    }
+//
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return 10
 //    }
