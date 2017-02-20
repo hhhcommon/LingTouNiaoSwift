@@ -52,6 +52,8 @@
 		E17BD6151E5A95B800275E7D /* CooperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6141E5A95B800275E7D /* CooperationCell.swift */; };
 		E17BD6181E5A95F600275E7D /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6171E5A95F600275E7D /* HomeHeaderView.swift */; };
 		E17BD61A1E5A960500275E7D /* HomeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD6191E5A960500275E7D /* HomeSectionHeaderView.swift */; };
+		E17BD61D1E5AA08200275E7D /* ActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD61C1E5AA08200275E7D /* ActionBar.swift */; };
+		E17BD61F1E5AA09500275E7D /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BD61E1E5AA09500275E7D /* ActionItem.swift */; };
 		E1836C671E2334D900FBB249 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C661E2334D900FBB249 /* PasswordView.swift */; };
 		E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C681E2334EB00FBB249 /* CaptchaView.swift */; };
 		E1836C6B1E23757C00FBB249 /* UIButton+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */; };
@@ -138,6 +140,8 @@
 		E17BD6141E5A95B800275E7D /* CooperationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CooperationCell.swift; sourceTree = "<group>"; };
 		E17BD6171E5A95F600275E7D /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		E17BD6191E5A960500275E7D /* HomeSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSectionHeaderView.swift; sourceTree = "<group>"; };
+		E17BD61C1E5AA08200275E7D /* ActionBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBar.swift; sourceTree = "<group>"; };
+		E17BD61E1E5AA09500275E7D /* ActionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
 		E1836C661E2334D900FBB249 /* PasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		E1836C681E2334EB00FBB249 /* CaptchaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaView.swift; sourceTree = "<group>"; };
 		E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Common.swift"; sourceTree = "<group>"; };
@@ -601,6 +605,7 @@
 		E17BD5F31E53FDC000275E7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E17BD61B1E5AA06D00275E7D /* Dock */,
 				E17BD6161E5A95C200275E7D /* Header */,
 				E17BD6111E5A959500275E7D /* Crowdfunding */,
 				E17BD6101E5A958900275E7D /* Cooperation */,
@@ -672,6 +677,15 @@
 				E17BD6191E5A960500275E7D /* HomeSectionHeaderView.swift */,
 			);
 			name = Header;
+			sourceTree = "<group>";
+		};
+		E17BD61B1E5AA06D00275E7D /* Dock */ = {
+			isa = PBXGroup;
+			children = (
+				E17BD61C1E5AA08200275E7D /* ActionBar.swift */,
+				E17BD61E1E5AA09500275E7D /* ActionItem.swift */,
+			);
+			name = Dock;
 			sourceTree = "<group>";
 		};
 		E1C6A73C1E2C9E7E00EE405A /* Tool */ = {
@@ -919,10 +933,12 @@
 				E11BFBAD1E1668DB00732980 /* GlobalManager.swift in Sources */,
 				E11BFBCA1E1B745500732980 /* InvestmentRootController.swift in Sources */,
 				E17BD5FB1E5403ED00275E7D /* ProductModel.swift in Sources */,
+				E17BD61F1E5AA09500275E7D /* ActionItem.swift in Sources */,
 				E17BD5F71E53FF6D00275E7D /* BaseProductListCell.swift in Sources */,
 				E1836C6D1E23844400FBB249 /* CustomButton.swift in Sources */,
 				E17BD5FF1E5423B000275E7D /* UserInfoModel.swift in Sources */,
 				E105F4851E4C2165006D3D0D /* AgreeView.swift in Sources */,
+				E17BD61D1E5AA08200275E7D /* ActionBar.swift in Sources */,
 				E101F2221E14C2740049A513 /* CustomTextField.swift in Sources */,
 				E101F20D1E127AC30049A513 /* UIImage+Common.swift in Sources */,
 				E17BD60F1E56FE6200275E7D /* HomeLoanCell.swift in Sources */,

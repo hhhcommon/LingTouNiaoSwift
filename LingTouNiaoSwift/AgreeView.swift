@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol AgreeViewDelegate {
-    func showProtocol()
-    func agreeProtocol(agree: Bool)
+@objc protocol AgreeViewDelegate {
+    @objc optional func showProtocol()
+    @objc optional func agreeProtocol(agree: Bool)
 }
 
 class AgreeView: UIView {
