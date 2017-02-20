@@ -8,10 +8,11 @@
 
 import UIKit
 
-class HomeLoanCell: UITableViewCell {
+let HomeLoanCellHeight: CGFloat = 75
 
-    let HomeLoanCellHeight: CGFloat = 75
-    let Margin: CGFloat = 12.5
+class HomeLoanCell: UITableViewCell {
+  
+    private let Margin: CGFloat = 12.5
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

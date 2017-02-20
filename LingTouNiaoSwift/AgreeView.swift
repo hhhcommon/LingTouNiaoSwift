@@ -37,7 +37,7 @@ class AgreeView: UIView {
         // 阅读并同意协议button
         let agreeButton = UIButton.createButton(nomalIconName: "unchecked_single", selectedIconName: "checked_single") { (button) in
             button.isSelected = !button.isSelected
-            self.delegate?.agreeProtocol(agree: button.isSelected)
+            self.delegate?.agreeProtocol!(agree: button.isSelected)
         }
         agreeButton.isSelected = true
         backView.addSubview(agreeButton)
@@ -58,7 +58,7 @@ class AgreeView: UIView {
             return
         }
         let protocolButton = UIButton.createButton(title: protocolName!, color: LinkColor, font: normalFont(fontSize)) { (button) in
-            self.delegate?.showProtocol()
+            self.delegate?.showProtocol!()
         }
         protocolButton.left = agreeTitleLabel.right
         backView.addSubview(protocolButton)

@@ -22,10 +22,10 @@ class ActionBar: UIView {
         set {
             if (newValue) {
                 let count = self.subviews.count;
-                let itemWidth = self.bounds.size.width / count;
-                let separatorTop = 11
+                let itemWidth = self.bounds.size.width / CGFloat(count)
+                let separatorTop: CGFloat = 11
                 for i in 0..<count-1 {
-                    let separatorView = UIView(frame: CGRect(x: itemWidth * (i + 1), y: separatorTop, width: 1 / ScreenScale, height: self.bounds.size.height - 2 * separatorTop))
+                    let separatorView = UIView(frame: CGRect(x: itemWidth * CGFloat(i + 1), y: separatorTop, width: 1 / ScreenScale, height: self.bounds.size.height - 2 * separatorTop))
                     separatorView.backgroundColor = LineColor
                     self.addSubview(separatorView)
                 }
@@ -33,11 +33,13 @@ class ActionBar: UIView {
         }
     }
     
-    func addActionItem(icon: String, selectedIcon: String, title: String) {
+    func addActionItem(icon: String, selectedIcon: String?, title: String) {
     
         let item = ActionItem()
         item.setImage(UIImage.init(named: icon), for: UIControlState.normal)
-        item.setImage(UIImage.init(named: selectedIcon), for: UIControlState.selected)
+        if selectedIcon != nil {
+            item.setImage(UIImage.init(named: selectedIcon!), for: UIControlState.selected)
+        }
         item.setTitle(title, for: UIControlState.normal)
         item.addTarget(self, action: #selector(clickItem(item:)), for: UIControlEvents.touchUpInside)
         self.addSubview(item)
@@ -54,6 +56,6 @@ class ActionBar: UIView {
     }
     
     func clickItem(item: ActionItem) {
-        self.delegate?.clickAcitonBar(actionBar: self, index: item.tag)
+        self.delegate?.clickAcitonBar!(actionBar: self, index: item.tag)
     }
 }
