@@ -67,6 +67,7 @@
 		E193B69A1E5C45050033D229 /* CrowdfundingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6991E5C45050033D229 /* CrowdfundingListModel.swift */; };
 		E193B69C1E5C48880033D229 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B69B1E5C48880033D229 /* BannerModel.swift */; };
 		E193B69E1E5C48A20033D229 /* BannerListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B69D1E5C48A20033D229 /* BannerListModel.swift */; };
+		E193B6A11E5C4B3C0033D229 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6A01E5C4B3C0033D229 /* HomeModel.swift */; };
 		E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */; };
 		E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7551E2DFC1000EE405A /* Contrstants.swift */; };
 		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
@@ -164,6 +165,7 @@
 		E193B6991E5C45050033D229 /* CrowdfundingListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdfundingListModel.swift; sourceTree = "<group>"; };
 		E193B69B1E5C48880033D229 /* BannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		E193B69D1E5C48A20033D229 /* BannerListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerListModel.swift; sourceTree = "<group>"; };
+		E193B6A01E5C4B3C0033D229 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1C6A7551E2DFC1000EE405A /* Contrstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contrstants.swift; sourceTree = "<group>"; };
@@ -729,6 +731,7 @@
 		E193B68B1E5C3F3F0033D229 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E193B69F1E5C4B2A0033D229 /* HomeModel */,
 				E193B68E1E5C3F610033D229 /* CrowdfundingModel */,
 				E193B68D1E5C3F510033D229 /* CooperationModel */,
 				E193B68C1E5C3F470033D229 /* BannerModel */,
@@ -761,6 +764,14 @@
 				E193B6991E5C45050033D229 /* CrowdfundingListModel.swift */,
 			);
 			name = CrowdfundingModel;
+			sourceTree = "<group>";
+		};
+		E193B69F1E5C4B2A0033D229 /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				E193B6A01E5C4B3C0033D229 /* HomeModel.swift */,
+			);
+			name = HomeModel;
 			sourceTree = "<group>";
 		};
 		E1C6A73C1E2C9E7E00EE405A /* Tool */ = {
@@ -1002,6 +1013,7 @@
 			files = (
 				E1836C671E2334D900FBB249 /* PasswordView.swift in Sources */,
 				E101F2111E14B1710049A513 /* UIBarButtonItem+ClearBackground.swift in Sources */,
+				E193B6A11E5C4B3C0033D229 /* HomeModel.swift in Sources */,
 				E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */,
 				E17BD6011E5423BD00275E7D /* AccountInfoModel.swift in Sources */,
 				E193B6961E5C40960033D229 /* CooperationListModel.swift in Sources */,
