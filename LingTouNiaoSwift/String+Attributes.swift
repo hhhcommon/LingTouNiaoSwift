@@ -6,7 +6,7 @@
 //  Copyright © 2017年 LiuJie. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension String {
     
@@ -28,10 +28,10 @@ extension String {
         return attributedString
     }
     
-//    func configAttributesWithFontSizeForString(fontSize: NSInteger, string: String) -> NSAttributedString {
-//        let attributes = [NSFontAttributeName : normalFont(fontSize)]
-//        return self.configAttributesForString(attributes: attributes, string: string)
-//    }
+    func configAttributesWithFontSizeForString(fontSize: CGFloat, string: String) -> NSAttributedString {
+        let attributes = [NSFontAttributeName : normalFont(fontSize)]
+        return self.configAttributesForString(attributes: attributes, string: string)
+    }
     
     func configAttributesForStringArray(attributes: Dictionary<String, Any>, stringArray: Array<String>) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: self)
@@ -53,10 +53,10 @@ extension String {
         return attributedString
     }
     
-//    func configAttributesWithFontSizeForStringArray(fontSize: NSInteger, stringArray: Array<String>) -> NSAttributedString {
-//        let attributes = [NSFontAttributeName : normalFont(fontSize)]
-//        return self.configAttributesForStringArray(attributes: attributes, stringArray: stringArray)
-//    }
+    func configAttributesWithFontSizeForStringArray(fontSize: CGFloat, stringArray: Array<String>) -> NSAttributedString {
+        let attributes = [NSFontAttributeName : normalFont(fontSize)]
+        return self.configAttributesForStringArray(attributes: attributes, stringArray: stringArray)
+    }
     
     func configAttributesArrayForStringArray(attributesArray: Array<Dictionary<String, Any>>, stringArray: Array<Any>) -> NSAttributedString {
         

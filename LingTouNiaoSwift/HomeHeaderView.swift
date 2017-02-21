@@ -22,25 +22,25 @@ let UnreadMessageCount = "unreadMessageCount"
 // 总高度
 let HeaderTotalHeight = adaptiveBaseIphone6(350)
 
-class HomeHeaderView: UIView, AcitonBarDelegate {
-
-    private let Margin = adaptiveBaseIphone6(12.5)
-    // dock高度
-    private let DockHeight = adaptiveBaseIphone6(90)
-    // 平台信息高度
-    private let PlatformHeight = adaptiveBaseIphone6(65)
-    // 底部阴影高度
-    private let BottomShadowHeight = adaptiveBaseIphone6(4)
-    // 底部视图总高
-    private var BottomTotalHeight: CGFloat {
-        get {
-            return DockHeight + PlatformHeight + BottomShadowHeight
-        }
+private let Margin = adaptiveBaseIphone6(12.5)
+// dock高度
+private let DockHeight = adaptiveBaseIphone6(90)
+// 平台信息高度
+private let PlatformHeight = adaptiveBaseIphone6(65)
+// 底部阴影高度
+private let BottomShadowHeight = adaptiveBaseIphone6(4)
+// 底部视图总高
+private var BottomTotalHeight: CGFloat {
+    get {
+        return DockHeight + PlatformHeight + BottomShadowHeight
     }
-    // 底部试图距离最底端的距离
-    private let SpacingWithBottomViewAndBottomLine = adaptiveBaseIphone6(8)
-    // 信息数量圆直径
-    private let MessageCountLabelDiam: CGFloat = 16
+}
+// 底部试图距离最底端的距离
+private let SpacingWithBottomViewAndBottomLine = adaptiveBaseIphone6(8)
+// 信息数量圆直径
+private let MessageCountLabelDiam: CGFloat = 16
+
+class HomeHeaderView: UIView, AcitonBarDelegate {
     
     // delegate
     var delegate: HomeHeaderViewDelegate?
@@ -76,13 +76,14 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         label.textColor = UIColor.white
         label.textAlignment = NSTextAlignment.center
         label.backgroundColor = UIColor.red
-        label.layer.cornerRadius = self.MessageCountLabelDiam * 0.5
+        label.layer.cornerRadius = MessageCountLabelDiam * 0.5
         label.layer.masksToBounds = true
+//        label.isHidden = true
         return label
     }()
     
     lazy var actionBar: ActionBar = {
-        let actionBar = ActionBar(frame: CGRect(x: 0, y: 0, width: self.width - 2 * self.Margin, height: self.DockHeight))
+        let actionBar = ActionBar(frame: CGRect(x: 0, y: 0, width: self.width - 2 * Margin, height: DockHeight))
         actionBar.backgroundColor = UIColor.white
         actionBar.delegate = self
         actionBar.addActionItem(icon: "pinpai", selectedIcon: nil, title: "品牌介绍")
@@ -135,7 +136,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         platformTotalView.addSubview(platformTotalTitleLabel)
         self.addConstraintsForDataView(self.platformTotalLabel)
         self.addConstraintsForTitleView(platformTotalTitleLabel)
-        
+
         registerTotalView.addSubview(self.registerTotalLabel)
         let registerTotalTitleLabel = self.createLabelWithTitle("平台用户突破")
         registerTotalView.addSubview(registerTotalTitleLabel)
@@ -149,7 +150,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         self.addConstraintsForTitleView(incomeTotalTitleLabel)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.clickCheckReport))
-        self.platformView.addGestureRecognizer(tap)
+        platformView.addGestureRecognizer(tap)
         
         return platformView
     }()
@@ -174,14 +175,14 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         backgroundView.addSubview(messageButton)
        
         messageButton.snp.makeConstraints({ (make) in
-            make.right.equalToSuperview().offset(-self.Margin)
+            make.right.equalToSuperview().offset(-Margin)
             make.size.equalTo(CGSize(width: (messageImage?.size.width)!, height: (messageImage?.size.height)!))
             make.top.equalToSuperview().offset(30)
         })
 
         self.messageAmountLabel.snp.makeConstraints({ (make) in
             make.centerY.equalTo(messageButton.snp.top).offset(5)
-            make.size.equalTo(CGSize(width: self.MessageCountLabelDiam, height: self.MessageCountLabelDiam))
+            make.size.equalTo(CGSize(width: MessageCountLabelDiam, height: MessageCountLabelDiam))
             make.centerX.equalTo(messageImage!.size.width - 15)
         })
         return backgroundView
@@ -201,26 +202,26 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
             
         self.actionBar.snp.makeConstraints({ (make) in
             make.top.left.width.equalToSuperview()
-            make.height.equalTo(self.DockHeight)
+            make.height.equalTo(DockHeight)
             make.bottom.equalTo(self.platformView.snp.top)
         })
         
         self.platformView.snp.makeConstraints({ (make) in
             make.left.bottom.width.equalToSuperview()
-            make.height.equalTo(self.PlatformHeight)
+            make.height.equalTo(PlatformHeight)
             make.top.equalTo(self.actionBar.snp.bottom)
         })
         
         lineView.snp.makeConstraints({ (make) in
             make.height.equalTo(1 / ScreenScale)
-            make.width.equalToSuperview().offset(-2.0 * self.Margin);
+            make.width.equalToSuperview().offset(-2.0 * Margin);
             make.top.equalTo(self.actionBar.snp.bottom)
             make.centerX.equalToSuperview()
         })
             
         //加阴影
         bottomView.layer.shadowColor = UIColor.black.cgColor    //shadowColor阴影颜色
-        bottomView.layer.shadowOffset = CGSize(width: self.BottomShadowHeight, height: self.BottomShadowHeight)//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
+        bottomView.layer.shadowOffset = CGSize(width: BottomShadowHeight, height: BottomShadowHeight)//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
         bottomView.layer.shadowOpacity = 0.1    //阴影透明度，默认0
 //        bottomView.layer.shadowRadius = 4;//阴影半径，默认3
         return bottomView
@@ -235,6 +236,16 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
     init(frame: CGRect, delegate: HomeHeaderViewDelegate) {
         super.init(frame: frame)
         self.delegate = delegate
+        self.addSubview(self.backgroundView)
+        self.addSubview(self.bottomView)
+        
+        self.bottomView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(Margin);
+            make.right.equalToSuperview().offset(-Margin);
+            make.height.equalTo(BottomTotalHeight);
+            make.width.equalToSuperview().offset(-2.0 * Margin);
+            make.bottom.equalToSuperview().offset(-SpacingWithBottomViewAndBottomLine);
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

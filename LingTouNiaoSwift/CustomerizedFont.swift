@@ -40,7 +40,7 @@ class CustomerizedFont: UIFont {
     //ios9系统字体为平方PingFangSC，ios9以下的字体为STHeitiSC 类似系统
     class func heiti(fontSize: CGFloat) -> UIFont {
         
-        if Double(UIDevice.current.systemVersion)! > 8.9 {
+        if #available(iOS 9.0, *) {
             return UIFont.init(name: "PingFangSC-Light", size: fontSize)!
         } else {
             return UIFont.init(name: "STHeitiSC-Light", size: fontSize)!
@@ -48,7 +48,8 @@ class CustomerizedFont: UIFont {
     }
     
     class func boldHeiti(fontSize: CGFloat) -> UIFont {
-        if Double(UIDevice.current.systemVersion)! > 8.9 {
+        
+        if #available(iOS 9.0, *) {
             return UIFont.init(name: "PingFangSC-Medium", size: fontSize)!
         } else {
             return UIFont.init(name: "STHeitiSC-Medium", size: fontSize)!

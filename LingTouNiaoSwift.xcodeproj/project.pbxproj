@@ -59,6 +59,8 @@
 		E1836C6B1E23757C00FBB249 /* UIButton+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */; };
 		E1836C6D1E23844400FBB249 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1836C6C1E23844400FBB249 /* CustomButton.swift */; };
 		E193B6641E5AE0640033D229 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6631E5AE0640033D229 /* String+Attributes.swift */; };
+		E193B6861E5C33520033D229 /* HomeDivisionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E193B6851E5C33520033D229 /* HomeDivisionCell.m */; };
+		E193B68A1E5C34150033D229 /* HomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E193B6891E5C34150033D229 /* HomeBannerCell.m */; };
 		E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */; };
 		E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7551E2DFC1000EE405A /* Contrstants.swift */; };
 		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
@@ -148,6 +150,10 @@
 		E1836C6A1E23757C00FBB249 /* UIButton+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Common.swift"; sourceTree = "<group>"; };
 		E1836C6C1E23844400FBB249 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		E193B6631E5AE0640033D229 /* String+Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
+		E193B6841E5C33520033D229 /* HomeDivisionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDivisionCell.h; sourceTree = "<group>"; };
+		E193B6851E5C33520033D229 /* HomeDivisionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDivisionCell.m; sourceTree = "<group>"; };
+		E193B6881E5C34150033D229 /* HomeBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeBannerCell.h; sourceTree = "<group>"; };
+		E193B6891E5C34150033D229 /* HomeBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeBannerCell.m; sourceTree = "<group>"; };
 		E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1C6A7551E2DFC1000EE405A /* Contrstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contrstants.swift; sourceTree = "<group>"; };
@@ -608,6 +614,8 @@
 		E17BD5F31E53FDC000275E7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E193B6871E5C34000033D229 /* Banner */,
+				E193B6831E5C33220033D229 /* Task */,
 				E17BD61B1E5AA06D00275E7D /* Dock */,
 				E17BD6161E5A95C200275E7D /* Header */,
 				E17BD6111E5A959500275E7D /* Crowdfunding */,
@@ -689,6 +697,24 @@
 				E17BD61E1E5AA09500275E7D /* ActionItem.swift */,
 			);
 			name = Dock;
+			sourceTree = "<group>";
+		};
+		E193B6831E5C33220033D229 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				E193B6841E5C33520033D229 /* HomeDivisionCell.h */,
+				E193B6851E5C33520033D229 /* HomeDivisionCell.m */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		E193B6871E5C34000033D229 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				E193B6881E5C34150033D229 /* HomeBannerCell.h */,
+				E193B6891E5C34150033D229 /* HomeBannerCell.m */,
+			);
+			name = Banner;
 			sourceTree = "<group>";
 		};
 		E1C6A73C1E2C9E7E00EE405A /* Tool */ = {
@@ -955,10 +981,12 @@
 				E1C6A7711E349D1100EE405A /* String+Check.swift in Sources */,
 				E101F2191E14B96D0049A513 /* HomeRootController.swift in Sources */,
 				E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */,
+				E193B6861E5C33520033D229 /* HomeDivisionCell.m in Sources */,
 				E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */,
 				E11BFBC81E1B743B00732980 /* DiscoverRootController.swift in Sources */,
 				E17BD6131E5A95A700275E7D /* CrowdfundingCell.swift in Sources */,
 				E101F20F1E138C6D0049A513 /* GlobalSize.swift in Sources */,
+				E193B68A1E5C34150033D229 /* HomeBannerCell.m in Sources */,
 				E101F2051E120FEE0049A513 /* GlobalAppearance.swift in Sources */,
 				E101F20B1E12163C0049A513 /* UIColor+HexColor.swift in Sources */,
 				E17BD60C1E558E9900275E7D /* BaseDto.swift in Sources */,
@@ -1116,11 +1144,12 @@
 			baseConfigurationReference = 5ACBD28F368E908037859D7A /* Pods-LingTouNiaoSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = XPECRFUB94;
 				INFOPLIST_FILE = LingTouNiaoSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devLiuJie.LingTouNiaoSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingtouniao.licai.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1132,11 +1161,12 @@
 			baseConfigurationReference = 2212BC831452389BAE2191E1 /* Pods-LingTouNiaoSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = XPECRFUB94;
 				INFOPLIST_FILE = LingTouNiaoSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devLiuJie.LingTouNiaoSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingtouniao.licai.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
