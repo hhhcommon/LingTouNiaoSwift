@@ -1,13 +1,13 @@
 //
-//  HomeDivisionCell.h
+//  CooperationModel.swift
 //  LingTouNiaoSwift
 //
 //  Created by LiuFeifei on 17/2/21.
 //  Copyright © 2017年 LiuJie. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+import UIKit
 
-@interface HomeDivisionCell : UITableViewCell
+class CooperationModel: NSObject {
 
-@end
+}

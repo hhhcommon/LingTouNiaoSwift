@@ -183,7 +183,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         self.messageAmountLabel.snp.makeConstraints({ (make) in
             make.centerY.equalTo(messageButton.snp.top).offset(5)
             make.size.equalTo(CGSize(width: MessageCountLabelDiam, height: MessageCountLabelDiam))
-            make.centerX.equalTo(messageImage!.size.width - 15)
+            make.centerX.equalTo(messageImage!.size.width)
         })
         return backgroundView
     }()
@@ -298,7 +298,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         return titleLabel;
     }
     
-    fileprivate func refresh() {
+    func refresh() {
         let defaults = UserDefaults.standard
         platformTotalLabel.text = defaults.string(forKey: PlatformAllAmount)
         platformTotalLabel.sizeToFit()

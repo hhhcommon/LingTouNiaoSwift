@@ -29,7 +29,7 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         self.title = "首页"
-        self.loadData()
+//        self.loadData()
         self.setTableView()
         self.registerCell()
         self.addNotifications()
@@ -40,7 +40,7 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
     }
     
     func refreshUI() {
-        
+        homeHeaderView?.refresh()
     }
     
     func loadData() {
