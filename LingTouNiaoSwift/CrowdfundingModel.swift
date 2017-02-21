@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CrowdfundingModel: NSObject {
+class CrowdfundingModel: BaseModel {
 
     var annualIncome: Double = 0   //年华收益，如：0.01,0.11
     var annualIncomeText = ""    //年化显示,如'2%','11%'

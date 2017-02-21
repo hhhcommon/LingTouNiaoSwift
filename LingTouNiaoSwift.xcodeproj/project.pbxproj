@@ -65,6 +65,8 @@
 		E193B6961E5C40960033D229 /* CooperationListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6951E5C40960033D229 /* CooperationListModel.swift */; };
 		E193B6981E5C44F90033D229 /* CrowdfundingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6971E5C44F90033D229 /* CrowdfundingModel.swift */; };
 		E193B69A1E5C45050033D229 /* CrowdfundingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6991E5C45050033D229 /* CrowdfundingListModel.swift */; };
+		E193B69C1E5C48880033D229 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B69B1E5C48880033D229 /* BannerModel.swift */; };
+		E193B69E1E5C48A20033D229 /* BannerListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B69D1E5C48A20033D229 /* BannerListModel.swift */; };
 		E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */; };
 		E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7551E2DFC1000EE405A /* Contrstants.swift */; };
 		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
@@ -160,6 +162,8 @@
 		E193B6951E5C40960033D229 /* CooperationListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CooperationListModel.swift; sourceTree = "<group>"; };
 		E193B6971E5C44F90033D229 /* CrowdfundingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdfundingModel.swift; sourceTree = "<group>"; };
 		E193B6991E5C45050033D229 /* CrowdfundingListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdfundingListModel.swift; sourceTree = "<group>"; };
+		E193B69B1E5C48880033D229 /* BannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		E193B69D1E5C48A20033D229 /* BannerListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerListModel.swift; sourceTree = "<group>"; };
 		E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1C6A7551E2DFC1000EE405A /* Contrstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contrstants.swift; sourceTree = "<group>"; };
@@ -735,6 +739,8 @@
 		E193B68C1E5C3F470033D229 /* BannerModel */ = {
 			isa = PBXGroup;
 			children = (
+				E193B69B1E5C48880033D229 /* BannerModel.swift */,
+				E193B69D1E5C48A20033D229 /* BannerListModel.swift */,
 			);
 			name = BannerModel;
 			sourceTree = "<group>";
@@ -1045,10 +1051,12 @@
 				E17BD5F51E53FEF700275E7D /* ProductListCell.swift in Sources */,
 				E11BFBB01E1B49B800732980 /* RegisterController.swift in Sources */,
 				E17BD6081E54739700275E7D /* BarProgressView.swift in Sources */,
+				E193B69C1E5C48880033D229 /* BannerModel.swift in Sources */,
 				E17BD6061E543A8F00275E7D /* ProductListModel.swift in Sources */,
 				E1C6A75D1E2E100400EE405A /* String+Common.swift in Sources */,
 				E11BFBAA1E1661BF00732980 /* ControllersManager.swift in Sources */,
 				E11BFBC41E1B73DB00732980 /* AccountRootController.swift in Sources */,
+				E193B69E1E5C48A20033D229 /* BannerListModel.swift in Sources */,
 				E17BD61A1E5A960500275E7D /* HomeSectionHeaderView.swift in Sources */,
 				E1F977B81E49B212001864A3 /* RegisterModel.swift in Sources */,
 				E11BFBA51E16018B00732980 /* CustomerizedFont.swift in Sources */,

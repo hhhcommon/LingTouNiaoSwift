@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CrowdfundingListModel: NSObject {
+class CrowdfundingListModel: BaseModel {
 
     var crowdfundingList: Array<CrowdfundingModel>?
     
