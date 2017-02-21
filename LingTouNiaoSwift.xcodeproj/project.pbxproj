@@ -62,6 +62,9 @@
 		E193B6901E5C3FE60033D229 /* CooperationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B68F1E5C3FE60033D229 /* CooperationModel.swift */; };
 		E193B6921E5C40100033D229 /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6911E5C40100033D229 /* HomeBannerCell.swift */; };
 		E193B6941E5C40230033D229 /* HomeDivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6931E5C40230033D229 /* HomeDivisionCell.swift */; };
+		E193B6961E5C40960033D229 /* CooperationListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6951E5C40960033D229 /* CooperationListModel.swift */; };
+		E193B6981E5C44F90033D229 /* CrowdfundingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6971E5C44F90033D229 /* CrowdfundingModel.swift */; };
+		E193B69A1E5C45050033D229 /* CrowdfundingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6991E5C45050033D229 /* CrowdfundingListModel.swift */; };
 		E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */; };
 		E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7551E2DFC1000EE405A /* Contrstants.swift */; };
 		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
@@ -154,6 +157,9 @@
 		E193B68F1E5C3FE60033D229 /* CooperationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CooperationModel.swift; sourceTree = "<group>"; };
 		E193B6911E5C40100033D229 /* HomeBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
 		E193B6931E5C40230033D229 /* HomeDivisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDivisionCell.swift; sourceTree = "<group>"; };
+		E193B6951E5C40960033D229 /* CooperationListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CooperationListModel.swift; sourceTree = "<group>"; };
+		E193B6971E5C44F90033D229 /* CrowdfundingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdfundingModel.swift; sourceTree = "<group>"; };
+		E193B6991E5C45050033D229 /* CrowdfundingListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdfundingListModel.swift; sourceTree = "<group>"; };
 		E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1C6A7551E2DFC1000EE405A /* Contrstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contrstants.swift; sourceTree = "<group>"; };
@@ -737,6 +743,7 @@
 			isa = PBXGroup;
 			children = (
 				E193B68F1E5C3FE60033D229 /* CooperationModel.swift */,
+				E193B6951E5C40960033D229 /* CooperationListModel.swift */,
 			);
 			name = CooperationModel;
 			sourceTree = "<group>";
@@ -744,6 +751,8 @@
 		E193B68E1E5C3F610033D229 /* CrowdfundingModel */ = {
 			isa = PBXGroup;
 			children = (
+				E193B6971E5C44F90033D229 /* CrowdfundingModel.swift */,
+				E193B6991E5C45050033D229 /* CrowdfundingListModel.swift */,
 			);
 			name = CrowdfundingModel;
 			sourceTree = "<group>";
@@ -989,9 +998,11 @@
 				E101F2111E14B1710049A513 /* UIBarButtonItem+ClearBackground.swift in Sources */,
 				E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */,
 				E17BD6011E5423BD00275E7D /* AccountInfoModel.swift in Sources */,
+				E193B6961E5C40960033D229 /* CooperationListModel.swift in Sources */,
 				E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */,
 				E193B6901E5C3FE60033D229 /* CooperationModel.swift in Sources */,
 				E11BFBAD1E1668DB00732980 /* GlobalManager.swift in Sources */,
+				E193B69A1E5C45050033D229 /* CrowdfundingListModel.swift in Sources */,
 				E193B6941E5C40230033D229 /* HomeDivisionCell.swift in Sources */,
 				E11BFBCA1E1B745500732980 /* InvestmentRootController.swift in Sources */,
 				E17BD5FB1E5403ED00275E7D /* ProductModel.swift in Sources */,
@@ -1019,6 +1030,7 @@
 				E11BFBC81E1B743B00732980 /* DiscoverRootController.swift in Sources */,
 				E17BD6131E5A95A700275E7D /* CrowdfundingCell.swift in Sources */,
 				E101F20F1E138C6D0049A513 /* GlobalSize.swift in Sources */,
+				E193B6981E5C44F90033D229 /* CrowdfundingModel.swift in Sources */,
 				E101F2051E120FEE0049A513 /* GlobalAppearance.swift in Sources */,
 				E101F20B1E12163C0049A513 /* UIColor+HexColor.swift in Sources */,
 				E17BD60C1E558E9900275E7D /* BaseDto.swift in Sources */,
