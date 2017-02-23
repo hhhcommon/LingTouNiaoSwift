@@ -8,7 +8,7 @@
 
 import UIKit
 
-let HomeLoanCellHeight: CGFloat = 75
+let HomeLoanCellHeight: CGFloat = adaptiveBaseIphone6(75)
 
 class HomeLoanCell: UITableViewCell {
   

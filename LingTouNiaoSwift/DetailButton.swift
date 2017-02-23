@@ -19,8 +19,8 @@ class DetailButton: UIButton {
         return detailButton
     }
 
-    convenience init(title: String, rightImage: UIImage, handleBlock: HandleBlock?) {
-        self.init()
+    init(title: String, rightImage: UIImage, handleBlock: HandleBlock?) {
+        super.init(frame: CGRect.zero)
         self.handleBlock = handleBlock
         let titleLabel = UILabel()
         titleLabel.font = normalFont(14)

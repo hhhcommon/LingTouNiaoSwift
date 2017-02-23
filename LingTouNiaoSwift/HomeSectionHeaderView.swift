@@ -25,8 +25,8 @@ class HomeSectionHeaderView: UIView {
         return homeSectionHeaderView
     }
 
-    convenience init(frame: CGRect, title: String, titleDetail: String?) {
-        self.init(frame: frame)
+    init(frame: CGRect, title: String, titleDetail: String?) {
+        super.init(frame: frame)
         let titleLabel = UILabel()
         titleLabel.font = boldFont(20)
         titleLabel.textColor = Color666666
@@ -42,7 +42,7 @@ class HomeSectionHeaderView: UIView {
         
         if titleDetail != nil && !titleDetail!.isEmpty {
             
-            let detailButton = DetailButton.creatDetailButton(title: titleDetail, rightImage: UIImage.init(named: "icon_arrow1"), handleBlock: { (button) in
+            let detailButton = DetailButton.creatDetailButton(title: titleDetail!, rightImage: UIImage.init(named: "icon_arrow1")!, handleBlock: { (button) in
                 self.delegate?.showMore(sectionHeaderView: self)
             })
             self.addSubview(detailButton)

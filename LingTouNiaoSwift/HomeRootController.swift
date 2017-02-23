@@ -54,9 +54,9 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
             if let homeModel = data as? HomeModel {
                 self.homeModel = homeModel
                 UserDefaults.standard.setValue(NSKeyedArchiver.archivedData(withRootObject: homeModel), forKey: MyHomeModel)
-                if !self.initCellDataWithHomeModel(homeModel: homeModel) {
-                    return
-                }
+//                if !self.initCellDataWithHomeModel(homeModel: homeModel) {
+//                    return
+//                }
                 UserDefaults.standard.setValue(homeModel.platformAllAmount, forKey: PlatformAllAmount)
                 UserDefaults.standard.setValue(homeModel.platformRegisterNum, forKey: PlatformRegisterNum)
                 UserDefaults.standard.setValue(homeModel.sumRevenue, forKey: SumRevenue)
@@ -76,9 +76,57 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
      */
     fileprivate func initCellDataWithHomeModel(homeModel: HomeModel) -> Bool {
 
+//        self.cellData.removeAllObjects()
+//        dic1 = ["title" : "",
+//                "titleDetail" : "",
+//                "class" : HomeDivisionCell.classForCoder(),
+//                "value" : "",
+//                "height" : DivisionCellHeight,
+//                "sel" : "goToTaskDivision"]
+//        if (!data.isShowXsModel && data.productList.count) {
+//            dic1 = @{@"title" : locationString(@"tab_home_licai"),
+//                @"titleDetail" : @"更多",
+//                @"class" : [BaseProductListCell class],
+//                @"value" : data.productList,
+//                @"height" : @(kBaseProductListCellHeight),
+//                @"sel" : @"goToProductDetail:"};
+//        }
+//        
+//        NSDictionary * dic2 = @{@"title" : locationString(@"tab_home_huzhu"),
+//            @"titleDetail" : @"更多",
+//            @"class" : [CooperationCell class],
+//            @"value" : data.productHzList.count ? data.productHzList : @"",
+//            @"height" : @(kCooperationCellHeight),
+//            @"sel" : @"goToCooperationDetail:"};
+//        
+//        NSDictionary * dic3 = [self getBannerDictonary];
+//        if (!dic3 || !dic3.count) {
+//            dic3 = @{@"title" : locationString(@"tab_home_huodong"),
+//                @"titleDetail" : @"更多",
+//                @"class" : [HomeBannerCell class],
+//                @"value" : [NSArray array],
+//                @"height" : @(kBannerCellHeight),
+//                @"sel" : @""};
+//        }
+//        
+//        NSDictionary * dic4 = @{@"title" : locationString(@"tab_home_zhongchou"),
+//            @"titleDetail" : data.productZcList.count ? @"更多" : @"",
+//            @"class" : [CrowdfundingCell class],
+//            @"value" : data.productZcList.count ? data.productZcList : @"",
+//            @"height" : @(kCrowdfundingCellHeight),
+//            @"sel" : @"goToCrowdfundingDetail:"};
+//        
+//        NSDictionary * dic5 = @{@"title" : locationString(@"tab_home_jiekuan"),
+//            @"titleDetail" : @"详情",
+//            @"class" : [HomeLoanCell class],
+//            @"value" : @"",
+//            @"height" : @(kHomeLoanCellHeight),
+//            @"sel" : @"goToLoan"};
+//        
+//        [self.data addObjectsFromArray:@[dic1, dic3, dic2, dic4, dic5]];
+//        return YES;
         
-        
-        return false
+        return true
     }
     
     fileprivate func setTableView() {
@@ -108,14 +156,15 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = ProductListCell(style: UITableViewCellStyle.default, reuseIdentifier: "ProductListCell")
-        let cell = HomeLoanCell(style: UITableViewCellStyle.default, reuseIdentifier: "HomeLoanCell")
+//        let cell = HomeLoanCell(style: UITableViewCellStyle.default, reuseIdentifier: HomeLoanCellIdentify)
+        let cell = HomeDivisionCell(style: UITableViewCellStyle.default, reuseIdentifier: HomeDivisionCellIdentify)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
 //        cell.product = sourceData[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 120
     }
 //
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
