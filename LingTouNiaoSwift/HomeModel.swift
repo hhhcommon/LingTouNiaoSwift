@@ -38,4 +38,25 @@ class HomeModel: BaseModel {
     var yyUrl = ""
     // 未读消息数
     var unreadMessageCount = 0
+    
+    override static func mj_objectClassInArray() -> [AnyHashable : Any]! {
+        return ["productList" : ProductModel.self, "productHzList" : CooperationModel.self, "productZcList" : CrowdfundingModel.self]
+    }
+    
+    class func getHomeData(block: @escaping responsedDataBlock) {
+        NetAPIManager.shared.request(path: HomeRecommendUrl, params: nil, methodType: NetworkMethod.Get) { (response, error) in
+            
+            var data: Any?
+            if error == nil {
+                let dto = BaseDto.mj_object(withKeyValues: response)
+                if let dic = dto?.data as? Dictionary<String, Any> {
+                    let model = HomeModel()
+                    data = model.mj_setKeyValues(dic)
+                }
+            }
+            block(response, data, error)
+        }
+    }
 }
+
+

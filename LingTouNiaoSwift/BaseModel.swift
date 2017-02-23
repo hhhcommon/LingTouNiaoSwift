@@ -9,7 +9,7 @@
 import UIKit
 import MJExtension
 
-class BaseModel: NSObject {
+class BaseModel: NSObject, NSCoding {
     
     override init() {
         super.init()
@@ -29,4 +29,26 @@ class BaseModel: NSObject {
         }
         return nil
     }
+    
+    required init(coder aDecoder:NSCoder) {
+        super.init()
+        self.mj_decode(aDecoder)
+    }
+    
+    func encode(with aCoder:NSCoder) {
+        self.mj_encode(aCoder)
+    }
+    
+//    - (id)initWithCoder:(NSCoder *)decoder \
+//    {
+//    if (self = [super init]) {
+//    [self mj_decode:decoder];
+//    }
+//    return self;
+//    }
+//    \
+//    - (void)encodeWithCoder:(NSCoder *)encoder \
+//    { \
+//    [self mj_encode:encoder]; \
+//    }
 }

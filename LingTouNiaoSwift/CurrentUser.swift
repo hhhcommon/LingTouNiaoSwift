@@ -24,6 +24,10 @@ class CurrentUser: UserModel {
         }
     }
     
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //是否登录
     func hasLogged() -> Bool {
         return (sessionKey?.isEmpty)! ? false : true

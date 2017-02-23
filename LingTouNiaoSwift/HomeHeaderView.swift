@@ -315,7 +315,10 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
     
     fileprivate func addAttributesForLabel(_ label: UILabel) {
         if (label.text?.characters.count)! > 2 {
-//            [label addAttributesWithFontSize:15 forString:[label.text substringWithRange:NSMakeRange(label.text.length - 2, 2)]];
+            let startIndex = label.text!.index((label.text?.endIndex)!, offsetBy: -2)
+            let endIndex = label.text!.endIndex
+            let range = Range(uncheckedBounds: (lower: startIndex, upper: endIndex))
+            label.attributedText = label.text?.configAttributesWithFontSizeForString(fontSize: 15, string: label.text!.substring(with: range))
         }
     }
     

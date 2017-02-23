@@ -8,6 +8,7 @@
 
 import UIKit
 
+private let MyHomeModel = "MyHomeModel"
 private let ProductListCellIdentify = "ProductListCell"
 private let CrowdfundingCellIdentify = "CrowdfundingCell"
 private let CooperationCellIdentify = "CooperationCell"
@@ -19,6 +20,8 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
 
     var tableView: UITableView?
     var homeHeaderView: HomeHeaderView?
+    var homeModel: HomeModel?
+    var cellData: Array<Dictionary<String, Any>> = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,7 +32,10 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         self.title = "首页"
-//        self.loadData()
+        if let data = UserDefaults.standard.value(forKey: MyHomeModel) as? Data {
+            self.homeModel = NSKeyedUnarchiver.unarchiveObject(with: data) as? HomeModel
+        }
+        self.loadData()
         self.setTableView()
         self.registerCell()
         self.addNotifications()
@@ -44,17 +50,38 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
     }
     
     func loadData() {
-//        let params = ["pageSize": pageSize, "currentPage": currentPage]
-//        ProductListModel.getProductList(params: params) { (response, productList, error) in
-//            if productList != nil {
-//                let productList = productList as! ProductListModel
-//                self.sourceData = productList.productList!
-//                self.tableView?.reloadData()
-//            }
-//        }
+        HomeModel .getHomeData { (response, data, error) in
+            if let homeModel = data as? HomeModel {
+                self.homeModel = homeModel
+                UserDefaults.standard.setValue(NSKeyedArchiver.archivedData(withRootObject: homeModel), forKey: MyHomeModel)
+                if !self.initCellDataWithHomeModel(homeModel: homeModel) {
+                    return
+                }
+                UserDefaults.standard.setValue(homeModel.platformAllAmount, forKey: PlatformAllAmount)
+                UserDefaults.standard.setValue(homeModel.platformRegisterNum, forKey: PlatformRegisterNum)
+                UserDefaults.standard.setValue(homeModel.sumRevenue, forKey: SumRevenue)
+                UserDefaults.standard.setValue(homeModel.unreadMessageCount, forKey: UnreadMessageCount)
+                UserDefaults.standard.synchronize()
+                self.refreshUI()
+            }
+        }
     }
     
-    func setTableView() {
+    /**
+     *  初始化数据
+     *
+     *  @param data 首页数据模型
+     *
+     *  @return 初始化数据是否成功
+     */
+    fileprivate func initCellDataWithHomeModel(homeModel: HomeModel) -> Bool {
+
+        
+        
+        return false
+    }
+    
+    fileprivate func setTableView() {
         tableView = UITableView(frame: self.view.frame, style: UITableViewStyle.grouped)
         tableView!.backgroundColor = UIColor.white
         tableView!.dataSource = self
@@ -65,7 +92,7 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
         self.view.addSubview(tableView!)
     }
     
-    func registerCell() {
+    fileprivate func registerCell() {
         tableView!.register(ProductListCell.classForCoder(), forCellReuseIdentifier: ProductListCellIdentify)
         tableView!.register(HomeLoanCell.classForCoder(), forCellReuseIdentifier: HomeLoanCellIdentify)
         tableView!.register(HomeDivisionCell.classForCoder(), forCellReuseIdentifier: HomeDivisionCellIdentify)

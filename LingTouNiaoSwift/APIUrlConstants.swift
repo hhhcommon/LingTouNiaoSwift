@@ -17,7 +17,7 @@ func getCachePaths() -> Array<String> {
  *  网络接口
  */
 // baseUrl：基地址
-let API_BASE_URL = "http://192.168.18.191:10080"
+let API_BASE_URL = "http://192.168.18.191:8080"
 
 // url：获取图片验证码
 let GetPictureCaptchaUrl = "/user/register/pictureCode"
