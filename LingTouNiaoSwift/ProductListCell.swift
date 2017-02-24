@@ -8,7 +8,7 @@
 
 import UIKit
 
-let BaseProductListCellHeight: CGFloat = 150
+let ProductListCellHeight: CGFloat = 150
 
 class ProductListCell: UITableViewCell {
 
@@ -120,7 +120,7 @@ class ProductListCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = backgroundColor
-        backView.frame = CGRect(x: 0, y: 0, width: Int(ScreenWidth), height: Int(BaseProductListCellHeight - 10))
+        backView.frame = CGRect(x: 0, y: 0, width: Int(ScreenWidth), height: Int(ProductListCellHeight - 10))
         contentView.addSubview(backView)
         backView.backgroundColor = UIColor.white
         self.addAllSubviews()

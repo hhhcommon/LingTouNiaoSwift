@@ -51,4 +51,20 @@ extension String {
         return self.replacingOccurrences(of: " ", with: "")
     }
 
+    static func filterHTML(html: String) -> String {
+        
+        let scanner = Scanner.init(string: html)
+        var text: NSString? = nil
+        var result = html
+        while(scanner.isAtEnd == false)
+        {
+            //找到标签的起始位置
+            scanner.scanUpTo("<", into: nil)
+            //找到标签的结束位置
+            scanner.scanUpTo(">", into: &text)
+            //替换字符
+            result = html.replacingOccurrences(of: "\(text)>", with: "")
+        }
+        return result
+    }
 }

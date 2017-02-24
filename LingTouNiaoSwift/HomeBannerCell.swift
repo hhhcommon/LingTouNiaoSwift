@@ -8,6 +8,8 @@
 
 import UIKit
 
+let BannerCellHeight = adaptiveBaseIphone6(180)
+
 class HomeBannerCell: UITableViewCell {
 
     override func awakeFromNib() {

@@ -76,56 +76,61 @@ class HomeRootController: BaseViewController, UITableViewDataSource, UITableView
      */
     fileprivate func initCellDataWithHomeModel(homeModel: HomeModel) -> Bool {
 
-//        self.cellData.removeAllObjects()
-//        dic1 = ["title" : "",
-//                "titleDetail" : "",
-//                "class" : HomeDivisionCell.classForCoder(),
-//                "value" : "",
-//                "height" : DivisionCellHeight,
-//                "sel" : "goToTaskDivision"]
-//        if (!data.isShowXsModel && data.productList.count) {
-//            dic1 = @{@"title" : locationString(@"tab_home_licai"),
-//                @"titleDetail" : @"更多",
-//                @"class" : [BaseProductListCell class],
-//                @"value" : data.productList,
-//                @"height" : @(kBaseProductListCellHeight),
-//                @"sel" : @"goToProductDetail:"};
-//        }
-//        
-//        NSDictionary * dic2 = @{@"title" : locationString(@"tab_home_huzhu"),
-//            @"titleDetail" : @"更多",
-//            @"class" : [CooperationCell class],
-//            @"value" : data.productHzList.count ? data.productHzList : @"",
-//            @"height" : @(kCooperationCellHeight),
-//            @"sel" : @"goToCooperationDetail:"};
-//        
-//        NSDictionary * dic3 = [self getBannerDictonary];
+        self.cellData.removeAll()
+        var dic1: Dictionary<String, Any> = ["title" : "",
+                "titleDetail" : "",
+                "class" : HomeDivisionCell.classForCoder(),
+                "value" : "",
+                "height" : HomeDivisionCellHeight,
+                "sel" : "goToTaskDivision"]
+        if !homeModel.isShowXsModel && homeModel.productList.count > 0 {
+            dic1 = ["title" : "精选理财",
+                "titleDetail" : "更多",
+                "class" : ProductListCell.classForCoder(),
+                "value" : homeModel.productList,
+                "height" : ProductListCellHeight,
+                "sel" : "goToProductDetail:"]
+        }
+        
+        let dic2: Dictionary<String, Any> = ["title" : "互助保障",
+            "titleDetail" : "更多",
+            "class" : CooperationCell.classForCoder(),
+            "value" : homeModel.productHzList.count > 0 ? homeModel.productHzList : "",
+            "height" : CooperationCellHeight,
+            "sel" : "goToCooperationDetail:"]
+        
+        let dic3: Dictionary<String, Any> = ["title" : "热门活动",
+            "titleDetail" : "更多",
+            "class" : HomeBannerCell.classForCoder(),
+            "value" : Array<HomeBannerCell>(),
+            "height" : BannerCellHeight,
+            "sel" : ""]
+//        var dic3 = [self getBannerDictonary];
 //        if (!dic3 || !dic3.count) {
-//            dic3 = @{@"title" : locationString(@"tab_home_huodong"),
+//            dic3 = @{@"title" : "热门活动",
 //                @"titleDetail" : @"更多",
 //                @"class" : [HomeBannerCell class],
 //                @"value" : [NSArray array],
 //                @"height" : @(kBannerCellHeight),
 //                @"sel" : @""};
 //        }
-//        
-//        NSDictionary * dic4 = @{@"title" : locationString(@"tab_home_zhongchou"),
-//            @"titleDetail" : data.productZcList.count ? @"更多" : @"",
-//            @"class" : [CrowdfundingCell class],
-//            @"value" : data.productZcList.count ? data.productZcList : @"",
-//            @"height" : @(kCrowdfundingCellHeight),
-//            @"sel" : @"goToCrowdfundingDetail:"};
-//        
-//        NSDictionary * dic5 = @{@"title" : locationString(@"tab_home_jiekuan"),
-//            @"titleDetail" : @"详情",
-//            @"class" : [HomeLoanCell class],
-//            @"value" : @"",
-//            @"height" : @(kHomeLoanCellHeight),
-//            @"sel" : @"goToLoan"};
-//        
-//        [self.data addObjectsFromArray:@[dic1, dic3, dic2, dic4, dic5]];
-//        return YES;
         
+        let dic4: Dictionary<String, Any> = ["title" : "众筹计划",
+            "titleDetail" : homeModel.productZcList.count > 0 ? "更多" : "",
+            "class" : CrowdfundingCell.classForCoder(),
+            "value" : homeModel.productZcList.count > 0 ? homeModel.productZcList : "",
+            "height" : CrowdfundingCellHeight,
+            "sel" : "goToCrowdfundingDetail:"]
+        
+        let dic5: Dictionary<String, Any> = ["title" : "借款申请",
+            "titleDetail" : "详情",
+            "class" : HomeLoanCell.classForCoder(),
+            "value" : "",
+            "height" : HomeLoanCellHeight,
+            "sel" : "goToLoan"]
+        
+        self.cellData = [dic1, dic3, dic2, dic4, dic5]
+
         return true
     }
     
