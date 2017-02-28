@@ -97,7 +97,7 @@ class CrowdfundingCell: UITableViewCell {
         }
         
         topLineView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: Spacing, left: Spacing, bottom: Spacing, right: Spacing))
+            make.left.right.equalToSuperview().inset(UIEdgeInsets(top: Spacing, left: Spacing, bottom: Spacing, right: Spacing))
             make.height.equalTo(1.0 / ScreenScale)
             make.top.equalToSuperview()
         }
@@ -145,7 +145,7 @@ class CrowdfundingCell: UITableViewCell {
         }
         
         crowdfundingProgress.snp.makeConstraints { (make) in
-            make.height.equalTo(8);
+            make.height.equalTo(1);
             make.left.width.equalToSuperview()
             make.bottom.equalToSuperview().offset(-5)
         }
@@ -162,12 +162,12 @@ class CrowdfundingCell: UITableViewCell {
     }
     
     fileprivate func refresh(data: Any) {
+        
         if let crowdfundingModel = data as? CrowdfundingModel {
-            
             self.lookForwardIV.isHidden = true
             
             // 需要过滤html
-            self.titleLabel.text = String.filterHTML(html: crowdfundingModel.productFirstTitle)
+            titleLabel.text = String.filterHTML(html: crowdfundingModel.productFirstTitle)
             if crowdfundingModel.productType == "B" {
                 let annualIncomeText = String.filterHTML(html: crowdfundingModel.annualIncomeText)
                 incomeLabel.text = "\(annualIncomeText)\(String.filterHTML(html: crowdfundingModel.productSubTitle))"

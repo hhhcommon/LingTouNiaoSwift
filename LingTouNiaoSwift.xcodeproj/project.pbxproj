@@ -69,6 +69,9 @@
 		E193B69E1E5C48A20033D229 /* BannerListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B69D1E5C48A20033D229 /* BannerListModel.swift */; };
 		E193B6A11E5C4B3C0033D229 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6A01E5C4B3C0033D229 /* HomeModel.swift */; };
 		E193B6E51E5ECDAF0033D229 /* DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6E41E5ECDAF0033D229 /* DetailButton.swift */; };
+		E193B6E71E6005730033D229 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6E61E6005730033D229 /* BannerView.swift */; };
+		E193B6EA1E603B570033D229 /* RescourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6E91E603B570033D229 /* RescourceManager.swift */; };
+		E193B6EC1E603E980033D229 /* CommonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6EB1E603E980033D229 /* CommonApi.swift */; };
 		E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */; };
 		E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7551E2DFC1000EE405A /* Contrstants.swift */; };
 		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
@@ -168,6 +171,9 @@
 		E193B69D1E5C48A20033D229 /* BannerListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerListModel.swift; sourceTree = "<group>"; };
 		E193B6A01E5C4B3C0033D229 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E193B6E41E5ECDAF0033D229 /* DetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailButton.swift; sourceTree = "<group>"; };
+		E193B6E61E6005730033D229 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		E193B6E91E603B570033D229 /* RescourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescourceManager.swift; sourceTree = "<group>"; };
+		E193B6EB1E603E980033D229 /* CommonApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonApi.swift; sourceTree = "<group>"; };
 		E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1C6A7551E2DFC1000EE405A /* Contrstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contrstants.swift; sourceTree = "<group>"; };
@@ -448,6 +454,7 @@
 			children = (
 				E11BFBA91E1661BF00732980 /* ControllersManager.swift */,
 				E11BFBAC1E1668DB00732980 /* GlobalManager.swift */,
+				E193B6E91E603B570033D229 /* RescourceManager.swift */,
 			);
 			name = Mananger;
 			sourceTree = "<group>";
@@ -727,6 +734,7 @@
 			isa = PBXGroup;
 			children = (
 				E193B6911E5C40100033D229 /* HomeBannerCell.swift */,
+				E193B6E61E6005730033D229 /* BannerView.swift */,
 			);
 			name = Banner;
 			sourceTree = "<group>";
@@ -808,6 +816,7 @@
 			children = (
 				E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */,
 				E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */,
+				E193B6EB1E603E980033D229 /* CommonApi.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -1040,12 +1049,14 @@
 				E17BD6181E5A95F600275E7D /* HomeHeaderView.swift in Sources */,
 				E11BFBA71E162DAE00732980 /* UIView+Frame.swift in Sources */,
 				E193B6641E5AE0640033D229 /* String+Attributes.swift in Sources */,
+				E193B6EA1E603B570033D229 /* RescourceManager.swift in Sources */,
 				E101F1D11E111ABC0049A513 /* AppDelegate.swift in Sources */,
 				E105F48E1E52DB09006D3D0D /* PresentTransition.swift in Sources */,
 				E101F1FF1E120EEA0049A513 /* BaseViewController.swift in Sources */,
 				E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */,
 				E1C6A7711E349D1100EE405A /* String+Check.swift in Sources */,
 				E101F2191E14B96D0049A513 /* HomeRootController.swift in Sources */,
+				E193B6E71E6005730033D229 /* BannerView.swift in Sources */,
 				E1836C691E2334EB00FBB249 /* CaptchaView.swift in Sources */,
 				E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */,
 				E11BFBC81E1B743B00732980 /* DiscoverRootController.swift in Sources */,
@@ -1063,6 +1074,7 @@
 				E147B02F1E1CC7B100CCB8BB /* LoginView.swift in Sources */,
 				E17BD5F91E5403D400275E7D /* BaseModel.swift in Sources */,
 				E17BD5FD1E54236A00275E7D /* UserModel.swift in Sources */,
+				E193B6EC1E603E980033D229 /* CommonApi.swift in Sources */,
 				E17BD5F51E53FEF700275E7D /* ProductListCell.swift in Sources */,
 				E11BFBB01E1B49B800732980 /* RegisterController.swift in Sources */,
 				E17BD6081E54739700275E7D /* BarProgressView.swift in Sources */,

@@ -9,7 +9,7 @@
 import IQKeyboardManagerSwift
 
 class GlobalManager: NSObject {
-    static let sharedManager = GlobalManager()
+    static let shared = GlobalManager()
     private override init() {}
     
     class func globleSetting() {

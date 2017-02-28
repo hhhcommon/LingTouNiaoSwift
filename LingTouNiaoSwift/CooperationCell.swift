@@ -24,7 +24,7 @@ class CooperationCell: UITableViewCell {
         }
     }
     
-    var data: CooperationModel {
+    var data: Any {
         get {
             return self.data
         }
@@ -150,16 +150,18 @@ class CooperationCell: UITableViewCell {
         }
     }
     
-    fileprivate func refresh(data: CooperationModel) {
+    fileprivate func refresh(data: Any) {
         
-        contentImageView.sd_setImage(with: URL(string: data.productTopPic), placeholderImage: UIImage.init(named: "placeholder_banner"))
-        // 需要过滤html
-        titleLabel.text = String.filterHTML(html: data.productFirstTitle)
-        detailLabel.text = String.filterHTML(html: data.productSubTitle)
-        let startInvest = String.filterHTML(html: data.singleLimitAmount)
-        startInvestLabel.text = "\(startInvest)元起投"
-        startInvestLabel.sizeToFit()
-        let attributeString = startInvestLabel.text!.substring(to: startInvestLabel.text!.index((startInvestLabel.text?.endIndex)!, offsetBy: -4))
-        startInvestLabel.attributedText = startInvestLabel.text?.configAttributesForString(attributes: [NSForegroundColorAttributeName : UIColor.colorWithHex(hex: 0xea3e00)], string: attributeString)
+        if let value = data as? CooperationModel {
+            contentImageView.sd_setImage(with: URL(string: value.productTopPic), placeholderImage: UIImage.init(named: "placeholder_banner"))
+            // 需要过滤html
+            titleLabel.text = String.filterHTML(html: value.productFirstTitle)
+            detailLabel.text = String.filterHTML(html: value.productSubTitle)
+            let startInvest = String.filterHTML(html: value.singleLimitAmount)
+            startInvestLabel.text = "\(startInvest)元起投"
+            startInvestLabel.sizeToFit()
+            let attributeString = startInvestLabel.text!.substring(to: startInvestLabel.text!.index((startInvestLabel.text?.endIndex)!, offsetBy: -4))
+            startInvestLabel.attributedText = startInvestLabel.text?.configAttributesForString(attributes: [NSForegroundColorAttributeName : UIColor.colorWithHex(hex: 0xea3e00)], string: attributeString)
+        }
     }
 }

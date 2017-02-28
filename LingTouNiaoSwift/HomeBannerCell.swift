@@ -10,17 +10,38 @@ import UIKit
 
 let BannerCellHeight = adaptiveBaseIphone6(180)
 
-class HomeBannerCell: UITableViewCell {
+@objc protocol HomeBannerCellDelegate {
+    @objc optional func clickBanner(bannerView: BannerView, banner: BannerModel)
+}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+class HomeBannerCell: UITableViewCell, BannerViewDelegate {
+
+    var delegate: HomeBannerCellDelegate?
+    let bannerView = BannerView.init(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: BannerCellHeight))
+    var data: Array<BannerModel> {
+        get {
+            return self.data
+        }
+        set {
+            if newValue.count > 0 {
+                bannerView.delegate = self
+                bannerView.bannersList = newValue
+            }
+        }
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = UIColor.clear
+        self.addSubview(self.bannerView)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    internal func clickBanner(bannerView: BannerView, banner: BannerModel) {
+        self.delegate?.clickBanner!(bannerView: bannerView, banner: banner)
     }
 
 }
