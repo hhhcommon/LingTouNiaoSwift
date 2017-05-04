@@ -51,4 +51,5 @@ let NavigationTintColor = MainColor
 let BackgroundColor = ColorF9F9F9
 let DisabledColor = UIColor.colorWithHex(hex: 0xCCCCCC)
 let LinkColor = Color4A90E2
+let WhiteColor = UIColor.white
 

@@ -15,7 +15,7 @@ let GeneralSize: CGFloat = 44
 // 线粗
 let LineThick: CGFloat = 1 / UIScreen.main.scale
 // 左右边距
-let CommonMargin: CGFloat = 15
+let CommonMargin: CGFloat = adaptiveBaseIphone6(15)
 
 // 屏幕尺寸
 // 目标屏幕的宽

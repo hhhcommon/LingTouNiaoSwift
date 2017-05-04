@@ -72,6 +72,8 @@
 		E193B6E71E6005730033D229 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6E61E6005730033D229 /* BannerView.swift */; };
 		E193B6EA1E603B570033D229 /* RescourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6E91E603B570033D229 /* RescourceManager.swift */; };
 		E193B6EC1E603E980033D229 /* CommonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6EB1E603E980033D229 /* CommonApi.swift */; };
+		E1C4080A1EB9C835005B2971 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C408091EB9C835005B2971 /* BaseTableViewController.swift */; };
+		E1C4080D1EBB0A11005B2971 /* DiscoverRootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C4080C1EBB0A11005B2971 /* DiscoverRootCell.swift */; };
 		E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */; };
 		E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7551E2DFC1000EE405A /* Contrstants.swift */; };
 		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
@@ -174,6 +176,8 @@
 		E193B6E61E6005730033D229 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		E193B6E91E603B570033D229 /* RescourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescourceManager.swift; sourceTree = "<group>"; };
 		E193B6EB1E603E980033D229 /* CommonApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonApi.swift; sourceTree = "<group>"; };
+		E1C408091EB9C835005B2971 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		E1C4080C1EBB0A11005B2971 /* DiscoverRootCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverRootCell.swift; sourceTree = "<group>"; };
 		E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1C6A7551E2DFC1000EE405A /* Contrstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contrstants.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 			children = (
 				E101F1FE1E120EEA0049A513 /* BaseViewController.swift */,
 				E101F2001E120F310049A513 /* BaseNavigationController.swift */,
+				E1C408091EB9C835005B2971 /* BaseTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 		E11BFBB61E1B722300732980 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				E1C4080B1EBB09E5005B2971 /* View */,
 				E11BFBCB1E1B7F4C00732980 /* Controller */,
 			);
 			name = Discover;
@@ -785,6 +791,14 @@
 			name = HomeModel;
 			sourceTree = "<group>";
 		};
+		E1C4080B1EBB09E5005B2971 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1C4080C1EBB0A11005B2971 /* DiscoverRootCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		E1C6A73C1E2C9E7E00EE405A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1027,12 +1041,14 @@
 				E101F2111E14B1710049A513 /* UIBarButtonItem+ClearBackground.swift in Sources */,
 				E193B6A11E5C4B3C0033D229 /* HomeModel.swift in Sources */,
 				E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */,
+				E1C4080D1EBB0A11005B2971 /* DiscoverRootCell.swift in Sources */,
 				E17BD6011E5423BD00275E7D /* AccountInfoModel.swift in Sources */,
 				E193B6961E5C40960033D229 /* CooperationListModel.swift in Sources */,
 				E1C6A75F1E2E25B800EE405A /* NSObject+Common.swift in Sources */,
 				E193B6901E5C3FE60033D229 /* CooperationModel.swift in Sources */,
 				E11BFBAD1E1668DB00732980 /* GlobalManager.swift in Sources */,
 				E193B69A1E5C45050033D229 /* CrowdfundingListModel.swift in Sources */,
+				E1C4080A1EB9C835005B2971 /* BaseTableViewController.swift in Sources */,
 				E193B6941E5C40230033D229 /* HomeDivisionCell.swift in Sources */,
 				E11BFBCA1E1B745500732980 /* InvestmentRootController.swift in Sources */,
 				E17BD5FB1E5403ED00275E7D /* ProductModel.swift in Sources */,

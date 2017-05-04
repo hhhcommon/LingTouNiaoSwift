@@ -292,8 +292,7 @@ class BannerView: UIView, UIScrollViewDelegate {
 
     // MARK: - 滚动代理方法
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        //     NSLog(@"%.2f", scrollView.contentOffset.x);
+
         var page = 0
         if TightToLeft {
             page = Int(scroll.contentOffset.x / BannerWidth)
