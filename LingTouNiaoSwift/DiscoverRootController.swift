@@ -96,7 +96,8 @@ class DiscoverRootController : BaseTableViewController {
         } else if indexPath.section == 1 && indexPath.row == 1 {
             self.goToCooperationListController()
         } else {
-            
+            // todo：
+            // 跳转到h5
         }
     }
     

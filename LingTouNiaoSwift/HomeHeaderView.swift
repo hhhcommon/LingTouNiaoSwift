@@ -45,7 +45,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
     // delegate
     var delegate: HomeHeaderViewDelegate?
     
-    // MARK: - 平台累计投资总额label
+    // 平台累计投资总额label
     lazy var platformTotalLabel: UILabel = {
         let label = UILabel()
         label.font = normalFont(18)
@@ -53,7 +53,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         return label
     }()
     
-    // MARK: - 平台用户注册总数label
+    // 平台用户注册总数label
     lazy var registerTotalLabel: UILabel = {
         let label = UILabel()
         label.font = normalFont(18)
@@ -61,7 +61,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         return label
     }()
     
-    // MARK: - 用户赚取收益总额label
+    // 用户赚取收益总额label
     lazy var incomeTotalLabel: UILabel = {
         let label = UILabel()
         label.font = normalFont(18)
@@ -69,7 +69,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         return label
     }()
 
-    // MARK: - 消息中心上显示数量的label
+    // 消息中心上显示数量的label
     lazy var messageAmountLabel: UILabel = {
         let label = UILabel()
         label.font = normalFont(10)
@@ -78,7 +78,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         label.backgroundColor = UIColor.red
         label.layer.cornerRadius = MessageCountLabelDiam * 0.5
         label.layer.masksToBounds = true
-//        label.isHidden = true
+        label.isHidden = true
         return label
     }()
     
@@ -155,7 +155,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         return platformView
     }()
     
-    // MARK: - background view
+    // background view
     lazy var backgroundView: UIView = {
         let backgroundView = UIView(frame: self.bounds)
         
@@ -188,7 +188,7 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         return backgroundView
     }()
     
-    // MARK: - bottom view
+    // bottom view
     lazy var bottomView: UIView = {
         
         let bottomView = UIView()
@@ -227,12 +227,14 @@ class HomeHeaderView: UIView, AcitonBarDelegate {
         return bottomView
     }()
     
+    // MARK: - 工厂方法
     class func getHomeHeaderViewWithDelegate(delegate: HomeHeaderViewDelegate) -> HomeHeaderView {
         
         let homeHeaderView = HomeHeaderView.init(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: HeaderTotalHeight), delegate: delegate)
         return homeHeaderView
     }
     
+    // MARK: - init方法
     init(frame: CGRect, delegate: HomeHeaderViewDelegate) {
         super.init(frame: frame)
         self.delegate = delegate

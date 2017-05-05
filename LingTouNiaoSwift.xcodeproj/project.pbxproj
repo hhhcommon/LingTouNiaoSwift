@@ -74,6 +74,8 @@
 		E193B6EC1E603E980033D229 /* CommonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193B6EB1E603E980033D229 /* CommonApi.swift */; };
 		E1C4080A1EB9C835005B2971 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C408091EB9C835005B2971 /* BaseTableViewController.swift */; };
 		E1C4080D1EBB0A11005B2971 /* DiscoverRootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C4080C1EBB0A11005B2971 /* DiscoverRootCell.swift */; };
+		E1C408111EBB2AEB005B2971 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C408101EBB2AEB005B2971 /* AccountHeaderView.swift */; };
+		E1C408131EBC7013005B2971 /* UILabel+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C408121EBC7013005B2971 /* UILabel+Common.swift */; };
 		E1C6A73E1E2C9EA400EE405A /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */; };
 		E1C6A7561E2DFC1000EE405A /* Contrstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A7551E2DFC1000EE405A /* Contrstants.swift */; };
 		E1C6A75B1E2E0BBA00EE405A /* APIUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6A75A1E2E0BBA00EE405A /* APIUrlConstants.swift */; };
@@ -178,6 +180,8 @@
 		E193B6EB1E603E980033D229 /* CommonApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonApi.swift; sourceTree = "<group>"; };
 		E1C408091EB9C835005B2971 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		E1C4080C1EBB0A11005B2971 /* DiscoverRootCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverRootCell.swift; sourceTree = "<group>"; };
+		E1C408101EBB2AEB005B2971 /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
+		E1C408121EBC7013005B2971 /* UILabel+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Common.swift"; sourceTree = "<group>"; };
 		E1C6A73D1E2C9EA400EE405A /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		E1C6A7511E2DF5C100EE405A /* LingTouNiaoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LingTouNiaoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1C6A7551E2DFC1000EE405A /* Contrstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contrstants.swift; sourceTree = "<group>"; };
@@ -322,6 +326,7 @@
 				E1C6A75E1E2E25B800EE405A /* NSObject+Common.swift */,
 				E1C6A7701E349D1100EE405A /* String+Check.swift */,
 				E105F48A1E52AC29006D3D0D /* UINavigationController+FinishBlock.swift */,
+				E1C408121EBC7013005B2971 /* UILabel+Common.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -508,8 +513,7 @@
 		E11BFBB61E1B722300732980 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				E1C4080B1EBB09E5005B2971 /* View */,
-				E11BFBCB1E1B7F4C00732980 /* Controller */,
+				E1C4080E1EBB1FBF005B2971 /* DiscoverRoot */,
 			);
 			name = Discover;
 			sourceTree = "<group>";
@@ -627,6 +631,7 @@
 		E11BFBC61E1B73E900732980 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1C408101EBB2AEB005B2971 /* AccountHeaderView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -797,6 +802,15 @@
 				E1C4080C1EBB0A11005B2971 /* DiscoverRootCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		E1C4080E1EBB1FBF005B2971 /* DiscoverRoot */ = {
+			isa = PBXGroup;
+			children = (
+				E1C4080B1EBB09E5005B2971 /* View */,
+				E11BFBCB1E1B7F4C00732980 /* Controller */,
+			);
+			name = DiscoverRoot;
 			sourceTree = "<group>";
 		};
 		E1C6A73C1E2C9E7E00EE405A /* Tool */ = {
@@ -1038,6 +1052,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1836C671E2334D900FBB249 /* PasswordView.swift in Sources */,
+				E1C408131EBC7013005B2971 /* UILabel+Common.swift in Sources */,
 				E101F2111E14B1710049A513 /* UIBarButtonItem+ClearBackground.swift in Sources */,
 				E193B6A11E5C4B3C0033D229 /* HomeModel.swift in Sources */,
 				E1C6A76F1E34919100EE405A /* RegisterView.swift in Sources */,
@@ -1062,6 +1077,7 @@
 				E101F2221E14C2740049A513 /* CustomTextField.swift in Sources */,
 				E101F20D1E127AC30049A513 /* UIImage+Common.swift in Sources */,
 				E17BD60F1E56FE6200275E7D /* HomeLoanCell.swift in Sources */,
+				E1C408111EBB2AEB005B2971 /* AccountHeaderView.swift in Sources */,
 				E17BD6181E5A95F600275E7D /* HomeHeaderView.swift in Sources */,
 				E11BFBA71E162DAE00732980 /* UIView+Frame.swift in Sources */,
 				E193B6641E5AE0640033D229 /* String+Attributes.swift in Sources */,
